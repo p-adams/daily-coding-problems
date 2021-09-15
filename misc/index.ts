@@ -15,6 +15,18 @@ export function reSum(list: Array<number>): number {
 // Pascal's triangle
 // given a number "rows", return first number of "rows" of
 // Pascal's triangle
-export function generateRows(rows: number = 1): number[][] {
-  return [[]];
+export function generateRows(rows = 1): number[][] {
+  const result: number[][] = [];
+  if (!rows) {
+    return result;
+  }
+  for (let i = 0; i < rows; i++) {
+    result[i] = [];
+    result[i][0] = 1;
+    for (let j = 1; j < i; j++) {
+      result[i][j] = result[i - 1][j - 1] + result[i - 1][j];
+    }
+    result[i][i] = 1;
+  }
+  return result;
 }

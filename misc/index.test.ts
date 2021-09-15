@@ -16,4 +16,5 @@ Deno.test("recursive sum", () => {
 
 Deno.test("Pascal's triangle", () => {
   assertEquals([[1]], generateRows());
+  assertEquals([[1], [1, 1], [1, 2, 1]], generateRows(3));
 });
