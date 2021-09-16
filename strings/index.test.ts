@@ -7,4 +7,8 @@ Deno.test("valid parentheses", () => {
   assertEquals(false, validParens("("));
   assertEquals(false, validParens(")"));
   assertEquals(true, validParens("(())"));
+  assertEquals(true, validParens("[()]"));
+  assertEquals(false, validParens("(}"));
+  assertEquals(false, validParens(")("));
+  assertEquals(false, validParens("{{{"));
 });
