@@ -14,6 +14,7 @@ Deno.test("valid parentheses", () => {
 });
 
 Deno.test("Longest common prefix", () => {
+  assertEquals("aar", longestCommonPrefix(["aar", "aar", "aarm"]));
   assertEquals("fl", longestCommonPrefix(["flower", "flow", "flight"]));
   assertEquals("", longestCommonPrefix(["dog", "racecar", "car"]));
 });
