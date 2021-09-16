@@ -14,3 +14,7 @@ export function validParens(p: string): boolean {
   }
   return !seen.length;
 }
+
+export function longestCommonPrefix(strs: string[]) {
+  return "";
+}
