@@ -23,3 +23,17 @@ export function leftRotate(a: number[], d: number) {
   }
   return a;
 }
+
+export function newYearChaos(q: number[]): void {
+  let bribes = 0;
+  let chaotic = false;
+  for (let i = q.length - 1; i >= 0; i--) {
+    if (q[i] - i > 3) {
+      chaotic = true;
+    }
+    for (let j = q[i] - 2; j < i; j++) {
+      if (q[j] > q[i]) bribes++;
+    }
+  }
+  console.log(chaotic ? "Too chaotic" : bribes);
+}
