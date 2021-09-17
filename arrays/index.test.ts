@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
-import { hourglassSum } from "./index.ts";
+import { hourglassSum, leftRotate } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
     [-9, -9, -9, 1, 1, 1],
@@ -10,4 +10,10 @@ Deno.test("hourglass sum", () => {
     [0, 0, 1, 2, 4, 0],
   ];
   assertEquals(28, hourglassSum(m));
+});
+
+Deno.test("left rotate", () => {
+  assertEquals([2, 3, 1], leftRotate([1, 2, 3], 1));
+  assertEquals([3, 4, 5, 1, 2], leftRotate([1, 2, 3, 4, 5], 2));
+  assertEquals([5, 1, 2, 3, 4], leftRotate([1, 2, 3, 4, 5], 4));
 });

@@ -11,3 +11,15 @@ export function hourglassSum(m: number[][]): number {
   }
   return max;
 }
+
+export function leftRotate(a: number[], d: number) {
+  let i = 0;
+  while (i < d) {
+    const item = a.shift();
+    if (item) {
+      a.push(item);
+    }
+    i++;
+  }
+  return a;
+}
