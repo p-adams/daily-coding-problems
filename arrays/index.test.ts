@@ -19,5 +19,8 @@ Deno.test("left rotate", () => {
 });
 
 Deno.test("intersection of two arrays", () => {
-  assertEquals([2, 2], intersection([1, 2, 3], [2, 2]));
+  assertEquals([1, 1], intersection([1, 1], [1, 1]));
+  assertEquals([2], intersection([1, 2, 3], [2, 2]));
+  assertEquals([], intersection([1, 2, 3], [4, 5, 6]));
+  assertEquals([5], intersection([1, 2, 3, 5, 5, 5], [5]));
 });

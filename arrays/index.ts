@@ -39,5 +39,23 @@ export function newYearChaos(q: number[]): void {
 }
 
 export function intersection(a: number[], b: number[]): number[] {
-  return [];
+  const result: number[] = [];
+  let i = 0,
+    j = 0;
+  while (
+    i < a.sort((a, b) => a - b).length &&
+    j < b.sort((a, b) => a - b).length
+  ) {
+    if (a[i] === b[j]) {
+      result.push(a[i]);
+      i++;
+      j++;
+    } else if (a[i] < b[j]) {
+      i++;
+    } else {
+      j++;
+    }
+  }
+
+  return result;
 }
