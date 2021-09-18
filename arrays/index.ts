@@ -37,3 +37,7 @@ export function newYearChaos(q: number[]): void {
   }
   console.log(chaotic ? "Too chaotic" : bribes);
 }
+
+export function intersection(a: number[], b: number[]): number[] {
+  return [];
+}
