@@ -33,3 +33,18 @@ export function longestCommonPrefix(strs: string[]) {
   }
   return result;
 }
+
+export function lengthOfLongestSubstring(s: string): number {
+  const seen: boolean[] = Array(256).fill(false);
+  let maxLength = 0;
+  let acc = 0;
+  for (let i = 0; i < s.length; i++) {
+    while (seen[s.charCodeAt(i)]) {
+      seen[s.charCodeAt(acc)] = false;
+      acc++;
+    }
+    seen[s.charCodeAt(i)] = true;
+    maxLength = Math.max(i - acc + 1, maxLength);
+  }
+  return maxLength;
+}
