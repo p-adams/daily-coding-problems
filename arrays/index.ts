@@ -61,25 +61,38 @@ export function intersection(a: number[], b: number[]): number[] {
 }
 // AKA sockMerchant
 export function pairSum(a: number[]): number {
-  return Array.from(
-    a
-      .reduce<Map<number, number>>(
-        (prev: Map<number, number>, curr: number) => {
-          if (prev.has(curr)) {
-            const item = prev.get(curr);
-            if (item) {
-              prev.set(curr, item + 1);
-            }
-          } else {
-            prev.set(curr, 1);
-          }
-          return prev;
-        },
-        new Map<number, number>()
-      )
-      .entries()
-  ).reduce((acc, item) => {
-    const [_, key] = item;
-    return acc + Math.floor(key / 2);
-  }, 0);
+  return a.reduce<{
+    map: Map<number, number>;
+    sum: number;
+  }>(
+    (
+      prev: {
+        map: Map<number, number>;
+        sum: number;
+      },
+      curr: number
+    ) => {
+      const { map } = prev;
+      if (map.has(curr)) {
+        const item = map.get(curr);
+        if (item) {
+          map.set(curr, item + 1);
+        }
+      } else {
+        map.set(curr, 1);
+      }
+      return {
+        ...prev,
+        map,
+        sum: Array.from(map.entries()).reduce((acc, item) => {
+          const [_, key] = item;
+          return acc + Math.floor(key / 2);
+        }, 0),
+      };
+    },
+    {
+      map: new Map<number, number>(),
+      sum: 0,
+    }
+  ).sum;
 }
