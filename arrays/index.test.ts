@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
-import { hourglassSum, leftRotate, intersection } from "./index.ts";
+import { hourglassSum, leftRotate, intersection, pairSum } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
     [-9, -9, -9, 1, 1, 1],
@@ -23,4 +23,8 @@ Deno.test("intersection of two arrays", () => {
   assertEquals([2], intersection([1, 2, 3], [2, 2]));
   assertEquals([], intersection([1, 2, 3], [4, 5, 6]));
   assertEquals([5], intersection([1, 2, 3, 5, 5, 5], [5]));
+});
+
+Deno.test("how many pairs exist in array", () => {
+  assertEquals(3, pairSum([10, 20, 20, 10, 10, 30, 50, 10, 20]));
 });

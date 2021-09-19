@@ -59,3 +59,7 @@ export function intersection(a: number[], b: number[]): number[] {
 
   return result;
 }
+// AKA sockMerchant
+export function pairSum(a: number[]): number {
+  return 0;
+}
