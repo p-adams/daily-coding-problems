@@ -27,4 +27,6 @@ Deno.test("intersection of two arrays", () => {
 
 Deno.test("how many pairs exist in array", () => {
   assertEquals(3, pairSum([10, 20, 20, 10, 10, 30, 50, 10, 20]));
+  assertEquals(0, pairSum([]));
+  assertEquals(2, pairSum([1, 2, 1, 2, 1, 3, 2]));
 });
