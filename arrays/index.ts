@@ -96,3 +96,7 @@ export function pairSum(a: number[]): number {
     }
   ).sum;
 }
+
+export function countingValleys(steps: number[]): number {
+  return 0;
+}
