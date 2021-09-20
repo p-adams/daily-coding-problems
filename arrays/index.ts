@@ -97,6 +97,20 @@ export function pairSum(a: number[]): number {
   ).sum;
 }
 
-export function countingValleys(steps: number[]): number {
-  return 0;
+export function countingValleys(steps: string[]): number {
+  let valleyCount = 0;
+  let seaLevel = 0;
+  for (let i = 0; i < steps.length; i++) {
+    const step = steps[i];
+    if (step === "U") {
+      seaLevel++;
+      if (seaLevel === 0) {
+        valleyCount++;
+      }
+    } else {
+      seaLevel--;
+    }
+  }
+
+  return valleyCount;
 }

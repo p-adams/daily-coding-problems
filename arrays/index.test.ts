@@ -39,4 +39,8 @@ Deno.test("how many pairs exist in array", () => {
 
 Deno.test("number of valleys traversed", () => {
   assertEquals(0, countingValleys([]));
+  assertEquals(1, countingValleys(["U", "D", "D", "D", "U", "D", "U", "U"]));
+  assertEquals(1, countingValleys(["D", "U"]));
+  assertEquals(2, countingValleys(["D", "D", "U", "U", "D", "D", "U", "U"]));
+  assertEquals(1, countingValleys(["D", "D", "U", "U"]));
 });
