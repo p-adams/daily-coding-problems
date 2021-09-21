@@ -70,4 +70,5 @@ Deno.test("maximum subarray", () => {
 
 Deno.test("max consecutive ones ", () => {
   assertEquals(0, maxConsecutiveOnes([]));
+  assertEquals(3, maxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
 });

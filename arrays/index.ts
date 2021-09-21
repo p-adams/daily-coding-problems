@@ -155,6 +155,15 @@ export function maxSubArray(nums: number[]): number {
 }
 
 export function maxConsecutiveOnes(nums: number[]): number {
-  const maxSoFar = 0;
-  return maxSoFar;
+  let maxSoFar = 0;
+  let bestMax = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === 1) {
+      maxSoFar += 1;
+      bestMax = Math.max(bestMax, maxSoFar);
+    } else {
+      maxSoFar = 0;
+    }
+  }
+  return bestMax;
 }
