@@ -130,3 +130,13 @@ export function jumpingOnClouds(clouds: number[]): number {
 
   return jumps;
 }
+
+export function containsDuplicates(nums: number[]): boolean {
+  const sNums = nums.sort((a, b) => a - b);
+  for (let i = 0; i < sNums.length - 1; i++) {
+    if (sNums[i] === sNums[i + 1]) {
+      return true;
+    }
+  }
+  return false;
+}

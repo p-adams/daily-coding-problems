@@ -6,6 +6,7 @@ import {
   pairSum,
   countingValleys,
   jumpingOnClouds,
+  containsDuplicates,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -49,4 +50,11 @@ Deno.test("number of valleys traversed", () => {
 Deno.test("minimum number of jumps required from start to finish", () => {
   assertEquals(0, jumpingOnClouds([]));
   assertEquals(4, jumpingOnClouds([0, 0, 1, 0, 0, 1, 0]));
+});
+
+Deno.test("contains duplicates", () => {
+  assertEquals(false, containsDuplicates([]));
+  assertEquals(true, containsDuplicates([1, 2, 3, 1]));
+  assertEquals(false, containsDuplicates([1, 2, 3, 4]));
+  assertEquals(true, containsDuplicates([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
 });
