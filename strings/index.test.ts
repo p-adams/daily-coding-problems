@@ -3,6 +3,7 @@ import {
   longestCommonPrefix,
   validParens,
   lengthOfLongestSubstring,
+  repeatedString,
 } from "./index.ts";
 
 Deno.test("valid parentheses", () => {
@@ -28,4 +29,10 @@ Deno.test("Length of longest substring without repeating characters", () => {
   assertEquals(1, lengthOfLongestSubstring("bbbbb"));
   assertEquals(3, lengthOfLongestSubstring("pwwkew"));
   assertEquals(0, lengthOfLongestSubstring(""));
+});
+
+Deno.test("count of a's in repeated string", () => {
+  assertEquals(0, repeatedString("", 0));
+  assertEquals(7, repeatedString("aba", 10));
+  assertEquals(1000000000000, repeatedString("a", 1000000000000));
 });

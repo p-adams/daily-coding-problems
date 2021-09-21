@@ -48,3 +48,14 @@ export function lengthOfLongestSubstring(s: string): number {
   }
   return maxLength;
 }
+
+export function repeatedString(s: string, n: number): number {
+  if (!s.length || !n) {
+    return 0;
+  }
+  const occurances = s.split("a").length - 1;
+  const max = Math.floor(n / s.length);
+  let totalAs = occurances * max;
+  totalAs += s.slice(0, n % s.length).split("a").length - 1;
+  return totalAs;
+}
