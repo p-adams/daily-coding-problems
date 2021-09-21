@@ -30,3 +30,21 @@ export function generateRows(rows = 1): number[][] {
   }
   return result;
 }
+
+const stairs = new Map<number, number>();
+
+function climb(n: number): number {
+  let result = 0;
+  if (stairs.has(n)) {
+    return stairs.get(n) || 0;
+  }
+  if (n === 1) return 1;
+  if (n === 2) return 2;
+  result = climb(n - 1) + climb(n - 2);
+  stairs.set(n, result);
+  return result;
+}
+
+export function climbStairs(n: number): number | undefined {
+  return climb(n);
+}
