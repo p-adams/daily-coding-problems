@@ -7,6 +7,8 @@ import {
   countingValleys,
   jumpingOnClouds,
   containsDuplicates,
+  maxSubArray,
+  maxConsecutiveOnes,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -57,4 +59,15 @@ Deno.test("contains duplicates", () => {
   assertEquals(true, containsDuplicates([1, 2, 3, 1]));
   assertEquals(false, containsDuplicates([1, 2, 3, 4]));
   assertEquals(true, containsDuplicates([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
+});
+
+Deno.test("maximum subarray", () => {
+  assertEquals(0, maxSubArray([]));
+  assertEquals(1, maxSubArray([1]));
+  assertEquals(3, maxSubArray([0, 3]));
+  assertEquals(23, maxSubArray([5, 4, -1, 7, 8]));
+});
+
+Deno.test("max consecutive ones ", () => {
+  assertEquals(0, maxConsecutiveOnes([]));
 });

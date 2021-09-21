@@ -140,3 +140,21 @@ export function containsDuplicates(nums: number[]): boolean {
   }
   return false;
 }
+
+export function maxSubArray(nums: number[]): number {
+  let bestMax = nums[0];
+  let currentMax = nums[0];
+  if (!nums.length) {
+    return 0;
+  }
+  for (let i = 1; i < nums.length; i++) {
+    currentMax = Math.max(nums[i], nums[i] + currentMax);
+    bestMax = Math.max(bestMax, currentMax);
+  }
+  return bestMax;
+}
+
+export function maxConsecutiveOnes(nums: number[]): number {
+  const maxSoFar = 0;
+  return maxSoFar;
+}
