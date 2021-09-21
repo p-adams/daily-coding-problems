@@ -114,3 +114,7 @@ export function countingValleys(steps: string[]): number {
 
   return valleyCount;
 }
+export function jumpingOnClouds(clouds: number[]): number {
+  let jumps = 0;
+  return jumps;
+}

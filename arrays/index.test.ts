@@ -5,6 +5,7 @@ import {
   intersection,
   pairSum,
   countingValleys,
+  jumpingOnClouds,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -43,4 +44,9 @@ Deno.test("number of valleys traversed", () => {
   assertEquals(1, countingValleys(["D", "U"]));
   assertEquals(2, countingValleys(["D", "D", "U", "U", "D", "D", "U", "U"]));
   assertEquals(1, countingValleys(["D", "D", "U", "U"]));
+});
+
+Deno.test("minimum number of jumps required from start to finish", () => {
+  assertEquals(0, jumpingOnClouds([]));
+  assertEquals(4, jumpingOnClouds([0, 0, 1, 0, 0, 1, 0]));
 });
