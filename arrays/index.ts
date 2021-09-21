@@ -114,7 +114,19 @@ export function countingValleys(steps: string[]): number {
 
   return valleyCount;
 }
+
 export function jumpingOnClouds(clouds: number[]): number {
   let jumps = 0;
+  let i = 0;
+  while (i < clouds.length - 1) {
+    if (i + 2 >= clouds.length || clouds[i + 2] === 1) {
+      i += 1;
+      jumps = jumps + 1;
+    } else {
+      i += 2;
+      jumps = jumps + 1;
+    }
+  }
+
   return jumps;
 }
