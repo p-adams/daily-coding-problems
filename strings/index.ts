@@ -68,24 +68,26 @@ export function reverseWord(word: string): string {
   return newWord;
 }
 
-export function isUnique(s: string): boolean {
+function characterCount(s: string): Map<string, number> {
   const seen = new Map<string, number>();
-
-  for (let i = 0; i < s.length; i++) {
-    const key = s[i];
-    const value = seen.get(key);
-    if (seen.has(key) && value) {
-      seen.set(key, value + 1);
+  for (const ch of s) {
+    if (seen.has(ch)) {
+      const value = seen.get(ch);
+      if (value) {
+        seen.set(ch, value + 1);
+      }
     } else {
-      seen.set(key, 1);
+      seen.set(ch, 1);
     }
   }
+  return seen;
+}
 
-  for (const value of seen.values()) {
+export function isUnique(s: string): boolean {
+  for (const value of characterCount(s).values()) {
     if (value > 1) {
       return false;
     }
   }
-
   return true;
 }
