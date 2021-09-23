@@ -10,6 +10,7 @@ import {
   maxSubArray,
   maxConsecutiveOnes,
   singleNumber,
+  plusOne,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -76,4 +77,8 @@ Deno.test("max consecutive ones ", () => {
 
 Deno.test("single number in array of pairs ", () => {
   assertEquals(1, maxConsecutiveOnes([2, 1, 2]));
+});
+
+Deno.test("plus one", () => {
+  assertEquals(1, plusOne([0]));
 });

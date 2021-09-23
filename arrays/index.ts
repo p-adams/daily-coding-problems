@@ -175,3 +175,7 @@ export function singleNumber(nums: number[]): number {
   }
   return unique;
 }
+
+export function plusOne(nums: number[]): number {
+  return -1;
+}
