@@ -4,6 +4,7 @@ import {
   validParens,
   lengthOfLongestSubstring,
   repeatedString,
+  isUnique,
 } from "./index.ts";
 
 Deno.test("valid parentheses", () => {
@@ -35,4 +36,10 @@ Deno.test("count of a's in repeated string", () => {
   assertEquals(0, repeatedString("", 0));
   assertEquals(7, repeatedString("aba", 10));
   assertEquals(1000000000000, repeatedString("a", 1000000000000));
+});
+
+Deno.test("string has all unique characters", () => {
+  assertEquals(true, isUnique(""));
+  assertEquals(true, isUnique("meow"));
+  assertEquals(false, isUnique("abcdefgg"));
 });

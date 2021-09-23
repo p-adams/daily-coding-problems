@@ -60,10 +60,32 @@ export function repeatedString(s: string, n: number): number {
   return totalAs;
 }
 
-function reverseWord(word: string): string {
+export function reverseWord(word: string): string {
   let newWord = "";
   for (let i = word.length - 1; i >= 0; i--) {
     newWord += word[i];
   }
   return newWord;
+}
+
+export function isUnique(s: string): boolean {
+  const seen = new Map<string, number>();
+
+  for (let i = 0; i < s.length; i++) {
+    const key = s[i];
+    const value = seen.get(key);
+    if (seen.has(key) && value) {
+      seen.set(key, value + 1);
+    } else {
+      seen.set(key, 1);
+    }
+  }
+
+  for (const value of seen.values()) {
+    if (value > 1) {
+      return false;
+    }
+  }
+
+  return true;
 }
