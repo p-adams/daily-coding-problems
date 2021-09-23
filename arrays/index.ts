@@ -167,3 +167,11 @@ export function maxConsecutiveOnes(nums: number[]): number {
   }
   return bestMax;
 }
+
+export function singleNumber(nums: number[]): number {
+  let unique = 0;
+  for (let i = 0; i < nums.length; i++) {
+    unique = unique ^ nums[i];
+  }
+  return unique;
+}
