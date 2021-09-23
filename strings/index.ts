@@ -84,8 +84,8 @@ function characterCount(s: string): Map<string, number> {
 }
 
 export function isUnique(s: string): boolean {
-  for (const value of characterCount(s).values()) {
-    if (value > 1) {
+  for (const count of characterCount(s).values()) {
+    if (count > 1) {
       return false;
     }
   }
