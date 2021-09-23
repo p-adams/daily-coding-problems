@@ -79,6 +79,13 @@ Deno.test("single number in array of pairs ", () => {
   assertEquals(1, maxConsecutiveOnes([2, 1, 2]));
 });
 
+Deno.test("find single number in unsorted array of pairs", () => {
+  assertEquals(1, singleNumber([2, 1, 2]));
+  assertEquals(100, singleNumber([200, 300, 300, 200, 100, -4, -4]));
+});
+
 Deno.test("plus one", () => {
-  assertEquals(1, plusOne([0]));
+  assertEquals([1], plusOne([0]));
+  assertEquals([2, 4], plusOne([2, 3]));
+  assertEquals([1, 0, 0, 0], plusOne([9, 9, 9]));
 });
