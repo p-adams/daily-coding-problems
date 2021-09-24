@@ -7,6 +7,7 @@ import {
   countingValleys,
   jumpingOnClouds,
   containsDuplicates,
+  containsDuplicates2,
   maxSubArray,
   maxConsecutiveOnes,
   singleNumber,
@@ -88,4 +89,9 @@ Deno.test("plus one", () => {
   assertEquals([1], plusOne([0]));
   assertEquals([2, 4], plusOne([2, 3]));
   assertEquals([1, 0, 0, 0], plusOne([9, 9, 9]));
+});
+
+Deno.test("contains duplicates", () => {
+  assertEquals(false, containsDuplicates2([1, 2, 3, 4]));
+  assertEquals(true, containsDuplicates2([1, 1]));
 });

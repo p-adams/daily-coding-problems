@@ -186,3 +186,7 @@ export function plusOne(nums: number[]): number[] {
   }
   return [1, ...nums];
 }
+
+export function containsDuplicates2(nums: number[]): boolean {
+  return new Set([...nums]).size !== nums.length;
+}
