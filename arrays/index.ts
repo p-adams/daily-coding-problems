@@ -221,3 +221,33 @@ export function rotateMatrix(matrix: number[][]): number[][] {
   }
   return matrix;
 }
+
+export function validSudoku(board: string[][]): boolean {
+  for (let i = 0; i < 9; i++) {
+    const row = new Set(),
+      col = new Set(),
+      box = new Set();
+
+    for (let j = 0; j < 9; j++) {
+      const _row = board[i][j];
+      const _col = board[j][i];
+      const _cell =
+        board[3 * Math.floor(i / 3) + Math.floor(j / 3)][3 * (i % 3) + (j % 3)];
+
+      if (_row != ".") {
+        if (row.has(_row)) return false;
+        row.add(_row);
+      }
+      if (_col != ".") {
+        if (col.has(_col)) return false;
+        col.add(_col);
+      }
+
+      if (_cell != ".") {
+        if (box.has(_cell)) return false;
+        box.add(_cell);
+      }
+    }
+  }
+  return true;
+}
