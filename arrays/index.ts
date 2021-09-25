@@ -42,14 +42,14 @@ export function intersection(a: number[], b: number[]): number[] {
   const result: number[] = [];
   let i = 0,
     j = 0;
-  const orderedA = a.sort((a, b) => a - b);
-  const orderedB = b.sort((a, b) => a - b);
-  while (i < orderedA.length && j < orderedB.length) {
-    if (orderedA[i] === orderedB[j]) {
-      result.push(orderedA[i]);
+  a.sort((a, b) => a - b);
+  b.sort((a, b) => a - b);
+  while (i < a.length && j < b.length) {
+    if (a[i] === b[j]) {
+      result.push(a[i]);
       i++;
       j++;
-    } else if (orderedA[i] < orderedB[j]) {
+    } else if (a[i] < b[j]) {
       i++;
     } else {
       j++;
