@@ -200,3 +200,24 @@ export function moveZeroes(nums: number[]) {
   }
   return nums;
 }
+
+export function rotateMatrix(matrix: number[][]): number[][] {
+  if (!matrix.length) return [[]];
+  const len = matrix.length;
+  for (let i = 0; i < len / 2; i++) {
+    // i = top
+    // len - i - 1 = bottom
+    for (let j = i; j < len - i - 1; j++) {
+      const temp = matrix[i][j];
+      // start cycle from bottom left-hand side of matrix
+      matrix[i][j] = matrix[len - 1 - j][i];
+      // swap bottom left for bottom right
+      matrix[len - 1 - j][i] = matrix[len - 1 - i][len - 1 - j];
+      // swap bottom right for top right
+      matrix[len - 1 - i][len - 1 - j] = matrix[j][len - 1 - i];
+      // swap top right for top left
+      matrix[j][len - 1 - i] = temp;
+    }
+  }
+  return matrix;
+}

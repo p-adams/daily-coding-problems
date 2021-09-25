@@ -13,6 +13,7 @@ import {
   singleNumber,
   plusOne,
   moveZeroes,
+  rotateMatrix,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -103,5 +104,19 @@ Deno.test("move zeroes to end of array in-place", () => {
   assertEquals(
     [1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0],
     moveZeroes([0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7])
+  );
+});
+
+Deno.test("rotate matrix clockwise", () => {
+  assertEquals([[]], rotateMatrix([[]]));
+  assertEquals(
+    [
+      [3, 1],
+      [4, 2],
+    ],
+    rotateMatrix([
+      [1, 2],
+      [3, 4],
+    ])
   );
 });
