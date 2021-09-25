@@ -1,9 +1,6 @@
 // sliding window algorithms
 // underscore prefix denotes brute force solution
 export function __maxSumOfKConsecutiveElements(nums, k) {
-  // input = [100, 200, 300, 400]
-  // k = 2
-  // output = 700
   if (k > nums.length) {
     return 0;
   }
@@ -14,6 +11,17 @@ export function __maxSumOfKConsecutiveElements(nums, k) {
     for (let j = i; j < i + k; j++) {
       currSum += nums[j];
     }
+    maxSum = Math.max(maxSum, currSum);
+  }
+  return maxSum;
+}
+
+export function maxSumOfKConsecutiveElements(nums, k) {
+  let currSum = nums.slice(0, k).reduce((acc, curr) => acc + curr, 0);
+  let maxSum = currSum;
+  for (let i = 1; i <= nums.length - k; i++) {
+    currSum -= nums[i - 1];
+    currSum += nums[i + (k - 1)];
     maxSum = Math.max(maxSum, currSum);
   }
   return maxSum;
