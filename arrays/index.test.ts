@@ -12,6 +12,7 @@ import {
   maxConsecutiveOnes,
   singleNumber,
   plusOne,
+  moveZeroes,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -94,4 +95,13 @@ Deno.test("plus one", () => {
 Deno.test("contains duplicates", () => {
   assertEquals(false, containsDuplicates2([1, 2, 3, 4]));
   assertEquals(true, containsDuplicates2([1, 1]));
+});
+
+Deno.test("move zeroes to end of array in-place", () => {
+  assertEquals([0], moveZeroes([0]));
+  assertEquals([1, 2, 0, 0], moveZeroes([1, 0, 2, 0]));
+  assertEquals(
+    [1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0],
+    moveZeroes([0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7])
+  );
 });

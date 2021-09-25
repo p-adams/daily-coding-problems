@@ -189,3 +189,14 @@ export function plusOne(nums: number[]): number[] {
 export function containsDuplicates2(nums: number[]): boolean {
   return new Set([...nums]).size !== nums.length;
 }
+
+export function moveZeroes(nums: number[]) {
+  for (let i = nums.length - 1; i >= 0; i--) {
+    const current = nums[i];
+    if (current === 0) {
+      nums.splice(i, 1);
+      nums.push(current);
+    }
+  }
+  return nums;
+}
