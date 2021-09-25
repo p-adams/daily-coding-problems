@@ -251,3 +251,18 @@ export function validSudoku(board: string[][]): boolean {
   }
   return true;
 }
+
+export function countingGoodSubstrings(s: string): number | undefined {
+  let goodSubstringCount = 0;
+  if (s.length < 3) {
+    return goodSubstringCount;
+  }
+  for (let i = 0; i <= s.length - 3; i++) {
+    const currentSubstring = s.substring(i, i + 3);
+    // allocates new Set in each iteration, so may not be ideal from space complexity standpoint
+    if (new Set(currentSubstring).size === currentSubstring.length)
+      goodSubstringCount++;
+  }
+
+  return goodSubstringCount;
+}

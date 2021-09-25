@@ -15,6 +15,7 @@ import {
   moveZeroes,
   rotateMatrix,
   validSudoku,
+  countingGoodSubstrings,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -137,4 +138,10 @@ Deno.test("is valid sudoku board", () => {
       [".", ".", ".", ".", "8", ".", ".", "7", "9"],
     ])
   );
+});
+
+Deno.test("substrings of size 3 with distinct characters", () => {
+  assertEquals(0, countingGoodSubstrings(""));
+  assertEquals(1, countingGoodSubstrings("xyzzaz"));
+  assertEquals(4, countingGoodSubstrings("aababcabc"));
 });
