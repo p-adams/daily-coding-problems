@@ -272,7 +272,7 @@ export function numUniqueEmails(emails: string[]): number {
   const map = new Map<string, string[]>();
   for (const email of emails) {
     const [local, domain] = email.split("@");
-    const strippedLocalName = local.replaceAll(".", "");
+    const strippedLocalName = local.split(".").join("");
     const plusIndex = strippedLocalName.indexOf("+");
     const localName =
       plusIndex !== -1
