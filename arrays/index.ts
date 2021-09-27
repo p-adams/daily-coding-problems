@@ -266,3 +266,7 @@ export function countingGoodSubstrings(s: string): number | undefined {
 
   return goodSubstringCount;
 }
+
+export function numUniqueEmails(emails: string[]): number {
+  return 0;
+}
