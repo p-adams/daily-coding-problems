@@ -149,7 +149,16 @@ Deno.test("substrings of size 3 with distinct characters", () => {
 
 Deno.test("number of unique emails", () => {
   assertEquals(0, numUniqueEmails([]));
-  assertEquals(2, numUniqueEmails(["foo@bar.com", "bar@bar.com"]));
+  assertEquals(
+    3,
+    numUniqueEmails([
+      "footest@bar.com",
+      "baz.qa.test+amr@acme.com",
+      "foo.test@bar.com",
+      "bar@bar.com",
+      "bazqatest@acme.com",
+    ])
+  );
   assertEquals(1, numUniqueEmails(["foo.test@bar.com", "foo.test+y@bar.com"]));
   assertEquals(
     2,

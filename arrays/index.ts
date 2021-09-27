@@ -268,5 +268,35 @@ export function countingGoodSubstrings(s: string): number | undefined {
 }
 
 export function numUniqueEmails(emails: string[]): number {
-  return 0;
+  let uniqueEmails = 0;
+  const map = new Map<string, string[]>();
+  for (const email of emails) {
+    const [local, domain] = email.split("@");
+    const strippedLocalName = local.replaceAll(".", "");
+    const plusIndex = strippedLocalName.indexOf("+");
+    const localName =
+      plusIndex !== -1
+        ? strippedLocalName.substring(0, plusIndex)
+        : strippedLocalName;
+    if (map.has(domain)) {
+      const localNames = map.values();
+      for (const locals of localNames) {
+        const hasLocal = locals.find((local) => local === localName);
+        if (!hasLocal) {
+          map.set(domain, locals.concat(localName));
+        }
+      }
+    } else {
+      map.set(domain, [localName]);
+    }
+  }
+
+  for (const props of map.entries()) {
+    for (const prop of props.values()) {
+      if (typeof prop !== "string") {
+        uniqueEmails += prop.length;
+      }
+    }
+  }
+  return uniqueEmails;
 }
