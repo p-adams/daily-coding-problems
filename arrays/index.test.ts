@@ -17,6 +17,7 @@ import {
   validSudoku,
   countingGoodSubstrings,
   numUniqueEmails,
+  mergeSortedArrays,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -191,5 +192,18 @@ Deno.test("number of unique emails", () => {
       "fg.r.u.uzj+taj@kziczvh.com",
       "fg.r.u.uzj+fek@kziczvh.com",
     ])
+  );
+});
+Deno.test("merge two sorted arrays", () => {
+  assertEquals([], mergeSortedArrays([], 0, [], 0));
+  assertEquals([1], mergeSortedArrays([0], 0, [1], 1));
+  assertEquals([1, 2], mergeSortedArrays([1], 1, [2], 1));
+  assertEquals(
+    [-10, 2, 30, 40, 50, 60],
+    mergeSortedArrays([-10, 2], 2, [30, 40, 50, 60], 4)
+  );
+  assertEquals(
+    [1, 2, 2, 3, 5, 6],
+    mergeSortedArrays([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
   );
 });
