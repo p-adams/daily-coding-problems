@@ -279,11 +279,11 @@ export function numUniqueEmails(emails: string[]): number {
         ? strippedLocalName.substring(0, plusIndex)
         : strippedLocalName;
     if (map.has(domain)) {
-      const localNames = map.values();
-      for (const locals of localNames) {
-        const hasLocal = locals.find((local) => local === localName);
-        if (!hasLocal) {
-          map.set(domain, locals.concat(localName));
+      const items = map.get(domain);
+      if (items) {
+        const item = items.find((i) => i === localName);
+        if (!item) {
+          map.set(domain, items.concat(localName));
         }
       }
     } else {
