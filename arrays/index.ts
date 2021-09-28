@@ -283,20 +283,15 @@ export function numUniqueEmails(emails: string[]): number {
       if (items) {
         const item = items.find((i) => i === localName);
         if (!item) {
+          uniqueEmails++;
           map.set(domain, items.concat(localName));
         }
       }
     } else {
+      uniqueEmails++;
       map.set(domain, [localName]);
     }
   }
 
-  for (const props of map.entries()) {
-    for (const prop of props.values()) {
-      if (typeof prop !== "string") {
-        uniqueEmails += prop.length;
-      }
-    }
-  }
   return uniqueEmails;
 }
