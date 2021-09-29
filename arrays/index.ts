@@ -323,3 +323,28 @@ export function mergeSortedArrays(
   }
   return nums1;
 }
+
+export function __maxProfit(prices: number[]): number {
+  let max = 0;
+  for (let i = 0; i < prices.length; i++) {
+    const buy = prices[i];
+    for (let j = i + 1; j < prices.length; j++) {
+      const sell = prices[j];
+      if (buy < sell) {
+        const currMax = sell - buy;
+        max = Math.max(max, currMax);
+      }
+    }
+  }
+  return max;
+}
+
+export function maxProfit(prices: number[]): number {
+  let max = 0;
+  let min = Number.MAX_VALUE;
+  for (let i = 0; i < prices.length; i++) {
+    min = Math.min(min, prices[i]);
+    max = Math.max(max, prices[i] - min);
+  }
+  return max;
+}

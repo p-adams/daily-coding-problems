@@ -18,6 +18,8 @@ import {
   countingGoodSubstrings,
   numUniqueEmails,
   mergeSortedArrays,
+  __maxProfit,
+  maxProfit,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -206,4 +208,16 @@ Deno.test("merge two sorted arrays", () => {
     [1, 2, 2, 3, 5, 6],
     mergeSortedArrays([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
   );
+});
+
+Deno.test("max profit (brute force)", () => {
+  assertEquals(0, __maxProfit([]));
+  assertEquals(5, __maxProfit([7, 1, 5, 3, 6, 4]));
+  assertEquals(0, __maxProfit([7, 6, 4, 3, 1]));
+});
+
+Deno.test("max profit (optimized)", () => {
+  assertEquals(0, maxProfit([]));
+  assertEquals(5, maxProfit([7, 1, 5, 3, 6, 4]));
+  assertEquals(0, maxProfit([7, 6, 4, 3, 1]));
 });
