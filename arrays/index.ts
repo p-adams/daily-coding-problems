@@ -348,3 +348,14 @@ export function maxProfit(prices: number[]): number {
   }
   return max;
 }
+
+export function matrixReshape(
+  mat: number[][],
+  r: number,
+  c: number
+): number[][] {
+  for (let i = 0; i < r; i++) {
+    for (let j = 0; j < c; j++) {}
+  }
+  return mat;
+}

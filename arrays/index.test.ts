@@ -20,6 +20,7 @@ import {
   mergeSortedArrays,
   __maxProfit,
   maxProfit,
+  matrixReshape,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -220,4 +221,18 @@ Deno.test("max profit (optimized)", () => {
   assertEquals(0, maxProfit([]));
   assertEquals(5, maxProfit([7, 1, 5, 3, 6, 4]));
   assertEquals(0, maxProfit([7, 6, 4, 3, 1]));
+});
+
+Deno.test("matrix reshape", () => {
+  assertEquals(
+    [1, 2, 3, 4],
+    matrixReshape(
+      [
+        [1, 2],
+        [3, 4],
+      ],
+      1,
+      4
+    )
+  );
 });
