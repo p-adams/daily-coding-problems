@@ -281,5 +281,15 @@ Deno.test("brute force matrix search", () => {
 });
 
 Deno.test("efficient matrix search", () => {
-  assertEquals(false, matrixSearch([[]], 10));
+  assertEquals(
+    true,
+    matrixSearch(
+      [
+        [1, 3, 5, 7],
+        [10, 11, 16, 20],
+        [23, 30, 34, 60],
+      ],
+      3
+    )
+  );
 });

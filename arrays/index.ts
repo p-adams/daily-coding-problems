@@ -399,5 +399,19 @@ export function __matrixSearch(matrix: number[][], target: number): boolean {
 }
 
 export function matrixSearch(matrix: number[][], target: number): boolean {
+  const flattenedMatrix = matrix.flat();
+  let low = 0;
+  let high = flattenedMatrix.length - 1;
+  while (low <= high) {
+    const mid = Math.floor((high + low) / 2);
+    if (flattenedMatrix[mid] === target) {
+      return true;
+    } else if (flattenedMatrix[mid] < target) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+
   return false;
 }
