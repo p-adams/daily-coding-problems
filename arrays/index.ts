@@ -386,3 +386,18 @@ export function matrixReshape(
 
   return res;
 }
+
+export function __matrixSearch(matrix: number[][], target: number): boolean {
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[0].length; j++) {
+      if (matrix[i][j] === target) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+export function matrixSearch(matrix: number[][], target: number): boolean {
+  return false;
+}

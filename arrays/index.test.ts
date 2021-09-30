@@ -22,6 +22,8 @@ import {
   __maxProfit,
   maxProfit,
   matrixReshape,
+  __matrixSearch,
+  matrixSearch,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -250,4 +252,34 @@ Deno.test("matrix reshape", () => {
       4
     )
   );
+});
+
+Deno.test("brute force matrix search", () => {
+  assertEquals(false, __matrixSearch([[]], 10));
+  assertEquals(
+    true,
+    __matrixSearch(
+      [
+        [1, 3, 5, 7],
+        [10, 11, 16, 20],
+        [23, 30, 34, 60],
+      ],
+      3
+    )
+  );
+  assertEquals(
+    false,
+    __matrixSearch(
+      [
+        [1, 3, 5, 7],
+        [10, 11, 16, 20],
+        [23, 30, 34, 60],
+      ],
+      17
+    )
+  );
+});
+
+Deno.test("efficient matrix search", () => {
+  assertEquals(false, matrixSearch([[]], 10));
 });
