@@ -17,6 +17,7 @@ import {
   validSudoku,
   countingGoodSubstrings,
   numUniqueEmails,
+  __mergeSortedArrays,
   mergeSortedArrays,
   __maxProfit,
   maxProfit,
@@ -208,6 +209,20 @@ Deno.test("merge two sorted arrays", () => {
   assertEquals(
     [1, 2, 2, 3, 5, 6],
     mergeSortedArrays([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
+  );
+});
+
+Deno.test("merge two sorted arrays (brute force)", () => {
+  assertEquals([], __mergeSortedArrays([], 0, [], 0));
+  assertEquals([1], __mergeSortedArrays([0], 0, [1], 1));
+  assertEquals([1, 2], __mergeSortedArrays([1], 1, [2], 1));
+  assertEquals(
+    [-10, 2, 30, 40, 50, 60],
+    __mergeSortedArrays([-10, 2], 2, [30, 40, 50, 60], 4)
+  );
+  assertEquals(
+    [1, 2, 2, 3, 5, 6],
+    __mergeSortedArrays([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
   );
 });
 

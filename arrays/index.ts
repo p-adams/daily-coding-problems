@@ -296,6 +296,19 @@ export function numUniqueEmails(emails: string[]): number {
   return uniqueEmails;
 }
 
+export function __mergeSortedArrays(
+  nums1: number[],
+  m: number,
+  nums2: number[],
+  n: number
+) {
+  for (let i = 0; i < n; i++) {
+    nums1[i + m] = nums2[i];
+  }
+  nums1.sort((a, b) => a - b);
+  return nums1;
+}
+
 export function mergeSortedArrays(
   nums1: number[],
   m: number,
