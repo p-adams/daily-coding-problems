@@ -354,8 +354,22 @@ export function matrixReshape(
   r: number,
   c: number
 ): number[][] {
-  for (let i = 0; i < r; i++) {
-    for (let j = 0; j < c; j++) {}
+  if (mat.length === 0 || r * c !== mat.length * mat[0].length) {
+    return mat;
   }
-  return mat;
+
+  const res = new Array(r).fill(0).map((_) => new Array(c).fill(0));
+  let row = 0,
+    col = 0;
+  for (let i = 0; i < mat.length; i++) {
+    for (let j = 0; j < mat[0].length; j++) {
+      res[row][col++] = mat[i][j];
+      if (col === c) {
+        row++;
+        col = 0;
+      }
+    }
+  }
+
+  return res;
 }

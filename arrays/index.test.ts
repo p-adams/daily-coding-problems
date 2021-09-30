@@ -225,7 +225,7 @@ Deno.test("max profit (optimized)", () => {
 
 Deno.test("matrix reshape", () => {
   assertEquals(
-    [1, 2, 3, 4],
+    [[1, 2, 3, 4]],
     matrixReshape(
       [
         [1, 2],
