@@ -93,5 +93,17 @@ export function isUnique(s: string): boolean {
 }
 
 export function firstUniqChar(s: string): number {
+  const charMap = new Map<string, { index: number; occurrences: number }>();
+  for (let i = 0; i < s.length; i++) {
+    const ch = s[i];
+    if (charMap.has(ch)) {
+      const currCh = charMap.get(ch);
+      if (currCh) {
+        charMap.set(ch, { index: i, occurrences: currCh.occurrences + 1 });
+      }
+    } else {
+      charMap.set(ch, { index: i, occurrences: 1 });
+    }
+  }
   return -1;
 }
