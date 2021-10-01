@@ -91,3 +91,7 @@ export function isUnique(s: string): boolean {
   }
   return true;
 }
+
+export function firstUniqChar(s: string): number {
+  return -1;
+}

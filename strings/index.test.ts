@@ -5,6 +5,7 @@ import {
   lengthOfLongestSubstring,
   repeatedString,
   isUnique,
+  firstUniqChar,
 } from "./index.ts";
 
 Deno.test("valid parentheses", () => {
@@ -42,4 +43,8 @@ Deno.test("string has all unique characters", () => {
   assertEquals(true, isUnique(""));
   assertEquals(true, isUnique("meow"));
   assertEquals(false, isUnique("abcdefgg"));
+});
+
+Deno.test("first unique character in a string", () => {
+  assertEquals(-1, firstUniqChar(""));
 });
