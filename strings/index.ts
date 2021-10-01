@@ -93,6 +93,9 @@ export function isUnique(s: string): boolean {
 }
 
 export function firstUniqChar(s: string): number {
+  if (!s.length) {
+    return -1;
+  }
   const charMap = new Map<string, { index: number; occurrences: number }>();
   for (let i = 0; i < s.length; i++) {
     const ch = s[i];
@@ -105,5 +108,13 @@ export function firstUniqChar(s: string): number {
       charMap.set(ch, { index: i, occurrences: 1 });
     }
   }
-  return -1;
+  let min = Number.MAX_VALUE;
+  charMap.forEach((ch) => {
+    if (ch.occurrences === 1) {
+      min = Math.min(min, ch.index);
+    } else {
+      min = -1;
+    }
+  });
+  return min;
 }
