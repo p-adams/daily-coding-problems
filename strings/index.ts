@@ -108,13 +108,13 @@ export function firstUniqChar(s: string): number {
       charMap.set(ch, { index: i, occurrences: 1 });
     }
   }
-  let min = Number.MAX_VALUE;
-  charMap.forEach((ch) => {
-    if (ch.occurrences === 1) {
-      min = Math.min(min, ch.index);
-    } else {
-      min = -1;
+  let min = -1;
+  for (const value of charMap.values()) {
+    if (value.occurrences === 1) {
+      min = value.index;
+      break;
     }
-  });
+  }
+
   return min;
 }

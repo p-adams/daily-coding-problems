@@ -49,4 +49,5 @@ Deno.test("first unique character in a string", () => {
   assertEquals(-1, firstUniqChar(""));
   assertEquals(0, firstUniqChar("asdf"));
   assertEquals(-1, firstUniqChar("bazbaz"));
+  assertEquals(0, firstUniqChar("leetcode"));
 });
