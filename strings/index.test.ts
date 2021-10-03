@@ -6,6 +6,7 @@ import {
   repeatedString,
   isUnique,
   firstUniqChar,
+  canConstruct,
 } from "./index.ts";
 
 Deno.test("valid parentheses", () => {
@@ -50,4 +51,8 @@ Deno.test("first unique character in a string", () => {
   assertEquals(0, firstUniqChar("asdf"));
   assertEquals(-1, firstUniqChar("bazbaz"));
   assertEquals(0, firstUniqChar("leetcode"));
+});
+
+Deno.test("can construct string A from string B", () => {
+  assertEquals(false, canConstruct("", ""));
 });

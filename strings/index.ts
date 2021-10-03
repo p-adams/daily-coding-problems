@@ -118,3 +118,7 @@ export function firstUniqChar(s: string): number {
 
   return min;
 }
+
+export function canConstruct(ransomNote: string, magazine: string): boolean {
+  return false;
+}
