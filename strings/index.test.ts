@@ -7,6 +7,7 @@ import {
   isUnique,
   firstUniqChar,
   canConstruct,
+  __isAnagram,
   isAnagram,
 } from "./index.ts";
 
@@ -62,6 +63,16 @@ Deno.test("can construct string A from string B", () => {
   assertEquals(false, canConstruct("fihjjjjei", "hjibagacbhadfaefdjaeaebgi"));
 });
 
-Deno.test("is valid anagram", () => {
-  assertEquals(false, isAnagram("", ""));
+Deno.test("is valid anagram (brute force)", () => {
+  assertEquals(true, __isAnagram("meow", "wmoe"));
+  assertEquals(true, __isAnagram("anagram", "nagaram"));
+  assertEquals(false, __isAnagram("rat", "cat"));
+});
+
+Deno.test("is valid anagram (efficient)", () => {
+  /*  assertEquals(true, isAnagram("meow", "wmoe"));
+  assertEquals(true, isAnagram("anagram", "nagaram"));
+  assertEquals(false, isAnagram("rat", "cat"));
+  assertEquals(false, isAnagram("ab", "a")); */
+  assertEquals(false, isAnagram("a", "ab"));
 });

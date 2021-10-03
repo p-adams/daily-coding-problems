@@ -147,7 +147,39 @@ export function canConstruct(ransomNote: string, magazine: string): boolean {
   }
   return true;
 }
+// poor memory usage
+export function __isAnagram(s: string, t: string): boolean {
+  return s.split("").sort().join("") === t.split("").sort().join("");
+}
 
 export function isAnagram(s: string, t: string): boolean {
-  return false;
+  if (s.length !== t.length) {
+    return false;
+  }
+  const m = new Map<string, number>();
+  for (let i = 0; i < s.length; i++) {
+    if (m.has(s[i])) {
+      const curr = m.get(s[i]);
+      if (curr) {
+        m.set(s[i], curr + 1);
+      }
+    } else {
+      m.set(s[i], 1);
+    }
+  }
+  for (let i = 0; i < t.length; i++) {
+    if (m.has(t[i])) {
+      const curr = m.get(t[i]);
+      if (curr) {
+        m.set(t[i], curr - 1);
+      }
+    }
+  }
+  for (const value of m.values()) {
+    if (value > 0) {
+      return false;
+    }
+  }
+
+  return true;
 }
