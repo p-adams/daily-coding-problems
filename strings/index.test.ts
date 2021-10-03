@@ -54,5 +54,9 @@ Deno.test("first unique character in a string", () => {
 });
 
 Deno.test("can construct string A from string B", () => {
-  assertEquals(false, canConstruct("", ""));
+  assertEquals(true, canConstruct("aa", "aab"));
+  assertEquals(false, canConstruct("a", "b"));
+  assertEquals(false, canConstruct("aa", "ab"));
+  assertEquals(true, canConstruct("me", "meow"));
+  assertEquals(false, canConstruct("fihjjjjei", "hjibagacbhadfaefdjaeaebgi"));
 });

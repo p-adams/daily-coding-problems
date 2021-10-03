@@ -120,5 +120,30 @@ export function firstUniqChar(s: string): number {
 }
 
 export function canConstruct(ransomNote: string, magazine: string): boolean {
-  return false;
+  const m = new Map();
+
+  for (let i = 0; i < magazine.length; i++) {
+    if (m.has(magazine[i])) {
+      const curr = m.get(magazine[i]);
+      if (curr) {
+        m.set(magazine[i], curr + 1);
+      }
+    } else {
+      m.set(magazine[i], 1);
+    }
+  }
+
+  for (let i = 0; i < ransomNote.length; i++) {
+    if (m.has(ransomNote[i])) {
+      const curr = m.get(ransomNote[i]);
+      if (curr && curr > 0) {
+        m.set(ransomNote[i], curr - 1);
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+  return true;
 }
