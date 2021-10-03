@@ -147,3 +147,7 @@ export function canConstruct(ransomNote: string, magazine: string): boolean {
   }
   return true;
 }
+
+export function isAnagram(s: string, t: string): boolean {
+  return false;
+}

@@ -7,6 +7,7 @@ import {
   isUnique,
   firstUniqChar,
   canConstruct,
+  isAnagram,
 } from "./index.ts";
 
 Deno.test("valid parentheses", () => {
@@ -59,4 +60,8 @@ Deno.test("can construct string A from string B", () => {
   assertEquals(false, canConstruct("aa", "ab"));
   assertEquals(true, canConstruct("me", "meow"));
   assertEquals(false, canConstruct("fihjjjjei", "hjibagacbhadfaefdjaeaebgi"));
+});
+
+Deno.test("is valid anagram", () => {
+  assertEquals(false, isAnagram("", ""));
 });
