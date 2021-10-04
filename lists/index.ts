@@ -41,3 +41,7 @@ export class List {
     return this.head.hasCycle(this.head);
   }
 }
+
+export function mergeLists(l1: List | null, l2: List | null): List | null {
+  return l1;
+}
