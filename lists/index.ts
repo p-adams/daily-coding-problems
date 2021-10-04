@@ -12,10 +12,17 @@ class ListNode {
     return this.next.length() + 1;
   }
   hasCycle(node: ListNode | null): boolean {
-    if (!node?.next) {
-      return false;
+    let p1 = node;
+    let p2 = node;
+    while (p2) {
+      p1 = p1!.next;
+      if (!p2.next) {
+        return false;
+      }
+      p2 = p2.next.next;
+      if (p2 === p1) return true;
     }
-    return this.hasCycle(node.next);
+    return false;
   }
 }
 
