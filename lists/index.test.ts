@@ -13,3 +13,8 @@ Deno.test("add new list item", () => {
   const list = populateList(2);
   assertEquals(2, list.length());
 });
+
+Deno.test("determines if list has cycle", () => {
+  const list = populateList(2);
+  assertEquals(true, list.hasCycle());
+});

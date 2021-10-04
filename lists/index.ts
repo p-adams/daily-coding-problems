@@ -11,6 +11,12 @@ class ListNode {
     }
     return this.next.length() + 1;
   }
+  hasCycle(node: ListNode | null): boolean {
+    if (!node?.next) {
+      return false;
+    }
+    return this.hasCycle(node.next);
+  }
 }
 
 export class List {
@@ -24,6 +30,7 @@ export class List {
     return this.head?.length();
   }
   hasCycle(): boolean {
-    return false;
+    if (!this.head) return false;
+    return this.head.hasCycle(this.head);
   }
 }
