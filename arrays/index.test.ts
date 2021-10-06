@@ -24,6 +24,7 @@ import {
   matrixReshape,
   __matrixSearch,
   matrixSearch,
+  findDuplicates,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -292,4 +293,9 @@ Deno.test("efficient matrix search", () => {
       3
     )
   );
+});
+
+Deno.test("find duplicates", () => {
+  assertEquals([1], findDuplicates([1, 1, 2]));
+  assertEquals([2, 3], findDuplicates([4, 3, 2, 7, 8, 2, 3, 1]));
 });

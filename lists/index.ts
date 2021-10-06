@@ -67,7 +67,7 @@ export class List {
     return result;
   }
 }
-function mergeTwoLists2(
+export function mergeTwoLists2(
   l1: ListNode | null,
   l2: ListNode | null
 ): ListNode | null {

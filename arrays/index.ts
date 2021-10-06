@@ -415,3 +415,17 @@ export function matrixSearch(matrix: number[][], target: number): boolean {
 
   return false;
 }
+
+export function findDuplicates(nums: number[]): number[] {
+  const res = [];
+  for (let i = 0; i < nums.length; i++) {
+    const abs = Math.abs(nums[i]);
+    if (nums[abs - 1] < 0) {
+      res.push(abs);
+    } else {
+      nums[abs - 1] *= -1;
+    }
+  }
+
+  return res;
+}
