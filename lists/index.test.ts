@@ -20,7 +20,13 @@ Deno.test("determines if list has cycle", () => {
 });
 
 Deno.test("merge two sorted lists", () => {
-  const l1 = List(5);
-  const l2 = List(10);
-  assertEquals([], L.mergeLists(l1, l2));
+  const l1 = new L.List();
+  l1.addItem(4);
+  l1.addItem(2);
+  l1.addItem(1);
+  const n3 = new L.ListNode(4, null);
+  const n2 = new L.ListNode(3, n3);
+  const l2 = new L.ListNode(1, n2);
+  const mergedList = l1.mergeLists(l2);
+  assertEquals([1, 1, 2, 3, 4, 4], L.List.toArray(mergedList));
 });

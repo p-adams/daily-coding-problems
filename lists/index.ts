@@ -1,4 +1,4 @@
-class ListNode {
+export class ListNode {
   val: number;
   next: ListNode | null;
   constructor(val?: number, next?: ListNode | null) {
@@ -24,6 +24,19 @@ class ListNode {
     }
     return false;
   }
+  mergeLists(l2: ListNode | null): ListNode | null {
+    if (!l2) return this;
+    if (this.val > l2!.val) return l2!.mergeLists(this);
+    this.next = l2!.mergeLists(this.next);
+    return this;
+  }
+  print() {
+    console.log(this.val);
+    if (!this.next) {
+      return;
+    }
+    this.next.print();
+  }
 }
 
 export class List {
@@ -40,8 +53,17 @@ export class List {
     if (!this.head) return false;
     return this.head.hasCycle(this.head);
   }
-}
-
-export function mergeLists(l1: List | null, l2: List | null): List | null {
-  return l1;
+  mergeLists(l2: ListNode | null): ListNode | null {
+    return this.head!.mergeLists(l2);
+  }
+  static toArray(list: ListNode | null) {
+    const result = [];
+    let curr = list;
+    let i = 0;
+    while (curr !== null) {
+      result[i++] = curr?.val;
+      curr = curr?.next;
+    }
+    return result;
+  }
 }
