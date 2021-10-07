@@ -303,4 +303,37 @@ Deno.test("find duplicates", () => {
 
 Deno.test("word search", () => {
   assertEquals(false, exists([], ""));
+  assertEquals(
+    true,
+    exists(
+      [
+        ["A", "B", "C", "E"],
+        ["S", "F", "C", "S"],
+        ["A", "D", "E", "E"],
+      ],
+      "SEE"
+    )
+  );
+  assertEquals(
+    true,
+    exists(
+      [
+        ["A", "B", "C", "E"],
+        ["S", "F", "C", "S"],
+        ["A", "D", "E", "E"],
+      ],
+      "ABCCED"
+    )
+  );
+  assertEquals(
+    false,
+    exists(
+      [
+        ["A", "B", "C", "E"],
+        ["S", "F", "C", "S"],
+        ["A", "D", "E", "E"],
+      ],
+      "ABCB"
+    )
+  );
 });

@@ -431,5 +431,43 @@ export function findDuplicates(nums: number[]): number[] {
 }
 
 export function exists(board: string[][], word: string): boolean {
+  for (let row = 0; row < board.length; row++) {
+    for (let col = 0; col < board[0].length; col++) {
+      if (dfs(board, word, row, col, 0)) {
+        return true;
+      }
+    }
+  }
+
+  function dfs(
+    board: string[][],
+    word: string,
+    row: number,
+    col: number,
+    index: number
+  ): boolean {
+    // base case
+    if (index === word.length) {
+      return true;
+    }
+    if (row < 0 || row >= board.length || col < 0 || col >= board[0].length) {
+      return false;
+    }
+    if (board[row][col] !== word[index]) {
+      return false;
+    }
+    const temp = board[row][col];
+    board[row][col] = "*";
+
+    const result: boolean =
+      dfs(board, word, row - 1, col, index + 1) ||
+      dfs(board, word, row + 1, col, index + 1) ||
+      dfs(board, word, row, col - 1, index + 1) ||
+      dfs(board, word, row, col + 1, index + 1);
+
+    board[row][col] = temp;
+    return result;
+  }
+
   return false;
 }
