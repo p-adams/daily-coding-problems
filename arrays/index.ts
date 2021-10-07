@@ -471,3 +471,7 @@ export function exists(board: string[][], word: string): boolean {
 
   return false;
 }
+
+export function removeElement(nums: number[], val: number): number {
+  return -1;
+}

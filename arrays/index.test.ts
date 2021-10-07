@@ -26,6 +26,7 @@ import {
   matrixSearch,
   findDuplicates,
   exists,
+  removeElement,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -336,4 +337,8 @@ Deno.test("word search", () => {
       "ABCB"
     )
   );
+});
+
+Deno.test("remove all occurrences of x", () => {
+  assertEquals(-1, removeElement([], 1));
 });
