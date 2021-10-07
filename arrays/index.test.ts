@@ -340,5 +340,6 @@ Deno.test("word search", () => {
 });
 
 Deno.test("remove all occurrences of x", () => {
-  assertEquals(-1, removeElement([], 1));
+  assertEquals(2, removeElement([3, 2, 2, 3], 3));
+  assertEquals(5, removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
 });
