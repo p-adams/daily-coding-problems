@@ -429,3 +429,7 @@ export function findDuplicates(nums: number[]): number[] {
 
   return res;
 }
+
+export function exists(board: string[][], word: string): boolean {
+  return false;
+}

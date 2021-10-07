@@ -25,6 +25,7 @@ import {
   __matrixSearch,
   matrixSearch,
   findDuplicates,
+  exists,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -298,4 +299,8 @@ Deno.test("efficient matrix search", () => {
 Deno.test("find duplicates", () => {
   assertEquals([1], findDuplicates([1, 1, 2]));
   assertEquals([2, 3], findDuplicates([4, 3, 2, 7, 8, 2, 3, 1]));
+});
+
+Deno.test("word search", () => {
+  assertEquals(false, exists([], ""));
 });
