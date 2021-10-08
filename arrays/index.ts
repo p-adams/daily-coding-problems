@@ -481,3 +481,7 @@ export function removeElement(nums: number[], val: number): number {
   }
   return nums.length;
 }
+
+export function searchInsert(nums: number[], target: number): number {
+  return -1;
+}

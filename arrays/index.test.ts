@@ -27,6 +27,7 @@ import {
   findDuplicates,
   exists,
   removeElement,
+  searchInsert,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -342,4 +343,8 @@ Deno.test("word search", () => {
 Deno.test("remove all occurrences of x", () => {
   assertEquals(2, removeElement([3, 2, 2, 3], 3));
   assertEquals(5, removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+});
+
+Deno.test("search insert", () => {
+  assertEquals(-1, searchInsert([], 0));
 });
