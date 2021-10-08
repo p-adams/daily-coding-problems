@@ -346,5 +346,10 @@ Deno.test("remove all occurrences of x", () => {
 });
 
 Deno.test("search insert", () => {
-  assertEquals(-1, searchInsert([], 0));
+  assertEquals(1, searchInsert([0, 1, 2, 3, 4, 5, 6], 1));
+  assertEquals(1, searchInsert([1, 3, 5, 6], 2));
+  assertEquals(2, searchInsert([1, 3, 5, 6], 4));
+  assertEquals(4, searchInsert([1, 3, 5, 6], 7));
+  assertEquals(0, searchInsert([1, 3, 5, 6], 0));
+  assertEquals(0, searchInsert([1], 0));
 });
