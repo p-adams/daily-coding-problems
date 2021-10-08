@@ -498,3 +498,7 @@ export function searchInsert(nums: number[], target: number): number {
   }
   return start > end ? start : end;
 }
+
+export function findWords(words: string[]): string[] {
+  return words;
+}

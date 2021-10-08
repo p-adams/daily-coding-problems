@@ -28,6 +28,7 @@ import {
   exists,
   removeElement,
   searchInsert,
+  findWords,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -352,4 +353,8 @@ Deno.test("search insert", () => {
   assertEquals(4, searchInsert([1, 3, 5, 6], 7));
   assertEquals(0, searchInsert([1, 3, 5, 6], 0));
   assertEquals(0, searchInsert([1], 0));
+});
+
+Deno.test("keyboard row", () => {
+  assertEquals([], findWords([]));
 });
