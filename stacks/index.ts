@@ -10,8 +10,7 @@ export class MinStack {
     this._stack.pop();
   }
   top(): number {
-    const last = this._stack[this._stack.length - 1];
-    return last;
+    return this._stack[this._stack.length - 1];
   }
   getMin(): number {
     let min = this._stack[0];
