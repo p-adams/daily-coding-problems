@@ -356,5 +356,11 @@ Deno.test("search insert", () => {
 });
 
 Deno.test("keyboard row", () => {
-  assertEquals([], findWords([]));
+  assertEquals(
+    ["Alaska", "Dad"],
+    findWords(["Hello", "Alaska", "Dad", "Peace"])
+  );
+  assertEquals(["Alaska", "Dad"], findWords(["Alaska", "Dad"]));
+  assertEquals([], findWords(["omk"]));
+  assertEquals(["adsdf", "sfd"], findWords(["adsdf", "sfd"]));
 });

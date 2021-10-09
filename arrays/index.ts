@@ -500,5 +500,21 @@ export function searchInsert(nums: number[], target: number): number {
 }
 
 export function findWords(words: string[]): string[] {
-  return words;
+  const result: string[] = [];
+  [
+    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+    ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
+    ["Z", "X", "C", "V", "B", "N", "M"],
+  ].forEach((row) => {
+    return words.reduce<string[]>((acc, word) => {
+      const curr = word.toUpperCase().split("");
+      const ex = curr.every((ch) => row.includes(ch));
+      if (ex) {
+        acc.push(word);
+      }
+      return acc;
+    }, result);
+  });
+
+  return result;
 }
