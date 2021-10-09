@@ -29,6 +29,7 @@ import {
   removeElement,
   searchInsert,
   findWords,
+  pivotIndex,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -363,4 +364,8 @@ Deno.test("keyboard row", () => {
   assertEquals(["Alaska", "Dad"], findWords(["Alaska", "Dad"]));
   assertEquals([], findWords(["omk"]));
   assertEquals(["adsdf", "sfd"], findWords(["adsdf", "sfd"]));
+});
+
+Deno.test("find pivot index", () => {
+  assertEquals(-1, pivotIndex([]));
 });

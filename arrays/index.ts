@@ -518,3 +518,7 @@ export function findWords(words: string[]): string[] {
 
   return result;
 }
+
+export function pivotIndex(nums: number[]): number {
+  return -1;
+}
