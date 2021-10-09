@@ -520,5 +520,16 @@ export function findWords(words: string[]): string[] {
 }
 
 export function pivotIndex(nums: number[]): number {
+  const sum = nums.reduce((acc, curr) => acc + curr, 0);
+  let left = 0;
+  let right = sum;
+  for (let i = 0; i < nums.length; i++) {
+    right -= nums[i];
+    if (left === right) {
+      return i;
+    }
+    left += nums[i];
+  }
+
   return -1;
 }

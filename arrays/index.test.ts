@@ -368,4 +368,7 @@ Deno.test("keyboard row", () => {
 
 Deno.test("find pivot index", () => {
   assertEquals(-1, pivotIndex([]));
+  assertEquals(3, pivotIndex([1, 7, 3, 6, 5, 6]));
+  assertEquals(-1, pivotIndex([1, 2, 3]));
+  assertEquals(0, pivotIndex([2, 1, -1]));
 });
