@@ -48,3 +48,7 @@ function climb(n: number): number {
 export function climbStairs(n: number): number | undefined {
   return climb(n);
 }
+
+export function guessNumber(n: number): number {
+  return -1;
+}
