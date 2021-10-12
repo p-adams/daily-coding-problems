@@ -48,7 +48,37 @@ function climb(n: number): number {
 export function climbStairs(n: number): number | undefined {
   return climb(n);
 }
+function guess(n: number, p: number): number {
+  if (p < n) {
+    return -1;
+  } else if (p > n) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+export function __guessNumber(n: number): number {
+  for (let i = 0; i < n; i++) {
+    if (guess(n, i) === 0) {
+      return i;
+    }
+  }
+  return n;
+}
 
 export function guessNumber(n: number): number {
+  let low = 1;
+  let high = n;
+  while (low <= high) {
+    const mid = Math.floor((low + high) / 2);
+    const response = guess(n, mid);
+    if (response === 0) {
+      return mid;
+    } else if (response < 0) {
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
   return -1;
 }
