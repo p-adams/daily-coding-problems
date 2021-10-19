@@ -533,3 +533,7 @@ export function pivotIndex(nums: number[]): number {
 
   return -1;
 }
+
+export function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
+  return [];
+}

@@ -30,6 +30,7 @@ import {
   searchInsert,
   findWords,
   pivotIndex,
+  nextGreaterElement,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -371,4 +372,8 @@ Deno.test("find pivot index", () => {
   assertEquals(3, pivotIndex([1, 7, 3, 6, 5, 6]));
   assertEquals(-1, pivotIndex([1, 2, 3]));
   assertEquals(0, pivotIndex([2, 1, -1]));
+});
+
+Deno.test("next greater element I", () => {
+  assertEquals([], nextGreaterElement([], []));
 });
