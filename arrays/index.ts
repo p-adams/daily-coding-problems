@@ -535,5 +535,11 @@ export function pivotIndex(nums: number[]): number {
 }
 
 export function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
-  return [];
+  for (let i = 0; i < nums1.length; i++) {
+    const nums = nums2.slice(nums2.findIndex((el) => el === nums1[i]));
+    const nextGreater = nums.find((el) => el > nums[0]);
+    nums1[i] = nextGreater ? nextGreater : -1;
+  }
+
+  return nums1;
 }
