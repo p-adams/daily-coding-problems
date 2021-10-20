@@ -376,4 +376,6 @@ Deno.test("find pivot index", () => {
 
 Deno.test("next greater element I", () => {
   assertEquals([], nextGreaterElement([], []));
+  assertEquals([-1, 3, -1], nextGreaterElement([4, 1, 2], [1, 3, 4, 2]));
+  assertEquals([3, -1], nextGreaterElement([2, 4], [1, 2, 3, 4]));
 });
