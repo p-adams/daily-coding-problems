@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
-import { reSum, sum, generateRows } from "./index.ts";
+import { reSum, sum, generateRows, RandomizedSet } from "./index.ts";
 Deno.test("sum", () => {
   assertEquals(0, sum([]));
   assertEquals(10, sum([10]));
@@ -17,4 +17,8 @@ Deno.test("recursive sum", () => {
 Deno.test("Pascal's triangle", () => {
   assertEquals([[1]], generateRows());
   assertEquals([[1], [1, 1], [1, 2, 1]], generateRows(3));
+});
+
+Deno.test("insert, delete, and get random O(1)", () => {
+  const rs = new RandomizedSet();
 });

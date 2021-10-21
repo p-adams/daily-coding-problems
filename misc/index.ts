@@ -82,3 +82,10 @@ export function guessNumber(n: number): number {
   }
   return -1;
 }
+
+export class RandomizedSet {
+  constructor() {}
+  insert(val: number): boolean {}
+  remove(val: number): boolean {}
+  getRandom(): number {}
+}
