@@ -21,4 +21,10 @@ Deno.test("Pascal's triangle", () => {
 
 Deno.test("insert, delete, and get random O(1)", () => {
   const rs = new RandomizedSet();
+  assertEquals(true, rs.insert(1));
+  assertEquals(false, rs.insert(1));
+  assertEquals(true, rs.insert(2));
+  assertEquals(true, rs.remove(1));
+  assertEquals(true, rs.insert(1));
+  console.log(rs.getRandom());
 });

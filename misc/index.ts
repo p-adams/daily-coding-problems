@@ -84,8 +84,29 @@ export function guessNumber(n: number): number {
 }
 
 export class RandomizedSet {
-  constructor() {}
-  insert(val: number): boolean {}
-  remove(val: number): boolean {}
-  getRandom(): number {}
+  private rSet: Map<number, number>;
+  constructor() {
+    this.rSet = new Map();
+  }
+  insert(val: number): boolean {
+    if (this.rSet.has(val)) {
+      return false;
+    } else {
+      this.rSet.set(val, 0);
+      return true;
+    }
+  }
+  remove(val: number): boolean {
+    if (this.rSet.has(val)) {
+      this.rSet.delete(val);
+      return true;
+    }
+    return false;
+  }
+  getRandom(): number {
+    const arr = Array.from(this.rSet);
+    const rand = arr[Math.floor(Math.random() * arr.length)][0];
+
+    return rand;
+  }
 }
