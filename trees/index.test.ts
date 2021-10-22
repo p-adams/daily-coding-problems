@@ -11,4 +11,17 @@ Deno.test("prefix tree", () => {
   assertEquals(true, trie.search("app"));
 });
 
-Deno.test("convert sorted array to binary search tree", () => {});
+Deno.test("convert sorted array to binary search tree", () => {
+  assertEquals(
+    {
+      val: 0,
+      left: {
+        val: -3,
+        left: { val: -10, left: null, right: null },
+        right: null,
+      },
+      right: { val: 9, left: { val: 5, left: null, right: null }, right: null },
+    },
+    JSON.parse(JSON.stringify(sortedArrayToBST([-10, -3, 0, 5, 9])))
+  );
+});

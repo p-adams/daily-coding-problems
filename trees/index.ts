@@ -74,7 +74,20 @@ export class TreeNode {
   }
 }
 
+function arrToBST(nums: number[], start: number, end: number): TreeNode | null {
+  if (end < start) {
+    return null;
+  }
+  if (end === start) {
+    return new TreeNode(nums[end]);
+  }
+  const mid = Math.ceil((start + end) / 2);
+  const root = new TreeNode(nums[mid]);
+  root.left = arrToBST(nums, start, mid - 1);
+  root.right = arrToBST(nums, mid + 1, end);
+  return root;
+}
+
 export function sortedArrayToBST(nums: number[]): TreeNode | null {
-  const node = new TreeNode();
-  return node;
+  return arrToBST(nums, 0, nums.length - 1);
 }
