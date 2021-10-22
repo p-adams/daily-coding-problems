@@ -62,3 +62,19 @@ export class Trie {
     return this.wordStartsWith(prefix, index + 1, children.get(ch));
   }
 }
+
+export class TreeNode {
+  val: number;
+  left: TreeNode | null;
+  right: TreeNode | null;
+  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+    this.val = val === undefined ? 0 : val;
+    this.left = left === undefined ? null : left;
+    this.right = right === undefined ? null : right;
+  }
+}
+
+export function sortedArrayToBST(nums: number[]): TreeNode | null {
+  const node = new TreeNode();
+  return node;
+}
