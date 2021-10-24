@@ -545,5 +545,11 @@ export function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
 }
 
 export function maximumWealth(accounts: number[][]): number {
-  return -1;
+  let currentMax = Number.MAX_VALUE;
+  let max = accounts[0].reduce((a, b) => a + b, 0);
+  for (let row = 1; row < accounts.length; row++) {
+    currentMax = accounts[row].reduce((a, b) => a + b);
+    max = Math.max(max, currentMax);
+  }
+  return max;
 }
