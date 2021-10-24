@@ -185,5 +185,13 @@ export function isAnagram(s: string, t: string): boolean {
 }
 
 export function numJewelsInStones(jewels: string, stones: string): number {
-  return 1;
+  let count = 0;
+  for (const stone of stones) {
+    const stoneIsJewel = jewels.includes(stone);
+    if (stoneIsJewel) {
+      count++;
+    }
+  }
+
+  return count;
 }
