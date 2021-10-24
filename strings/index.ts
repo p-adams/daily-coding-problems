@@ -183,3 +183,7 @@ export function isAnagram(s: string, t: string): boolean {
 
   return true;
 }
+
+export function numJewelsInStones(jewels: string, stones: string): number {
+  return 1;
+}

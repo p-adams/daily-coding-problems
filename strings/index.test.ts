@@ -9,6 +9,7 @@ import {
   canConstruct,
   __isAnagram,
   isAnagram,
+  numJewelsInStones,
 } from "./index.ts";
 
 Deno.test("valid parentheses", () => {
@@ -70,9 +71,13 @@ Deno.test("is valid anagram (brute force)", () => {
 });
 
 Deno.test("is valid anagram (efficient)", () => {
-  /*  assertEquals(true, isAnagram("meow", "wmoe"));
+  assertEquals(true, isAnagram("meow", "wmoe"));
   assertEquals(true, isAnagram("anagram", "nagaram"));
   assertEquals(false, isAnagram("rat", "cat"));
-  assertEquals(false, isAnagram("ab", "a")); */
+  assertEquals(false, isAnagram("ab", "a"));
   assertEquals(false, isAnagram("a", "ab"));
+});
+
+Deno.test("jewels and stones", () => {
+  assertEquals(3, numJewelsInStones("aA", "aAAbbbb"));
 });
