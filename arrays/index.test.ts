@@ -31,6 +31,7 @@ import {
   findWords,
   pivotIndex,
   nextGreaterElement,
+  maximumWealth,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -377,4 +378,14 @@ Deno.test("find pivot index", () => {
 Deno.test("next greater element I", () => {
   assertEquals([-1, 3, -1], nextGreaterElement([4, 1, 2], [1, 3, 4, 2]));
   assertEquals([3, -1], nextGreaterElement([2, 4], [1, 2, 3, 4]));
+});
+
+Deno.test("richest customer wealth", () => {
+  assertEquals(
+    6,
+    maximumWealth([
+      [1, 2, 3],
+      [3, 2, 1],
+    ])
+  );
 });

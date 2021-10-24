@@ -543,3 +543,7 @@ export function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
 
   return nums1;
 }
+
+export function maximumWealth(accounts: number[][]): number {
+  return -1;
+}
