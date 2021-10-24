@@ -195,3 +195,7 @@ export function numJewelsInStones(jewels: string, stones: string): number {
 
   return count;
 }
+
+export function defangIPaddr(address: string): string {
+  return address.split(".").join("[.]");
+}

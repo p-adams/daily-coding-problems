@@ -10,6 +10,7 @@ import {
   __isAnagram,
   isAnagram,
   numJewelsInStones,
+  defangIPaddr,
 } from "./index.ts";
 
 Deno.test("valid parentheses", () => {
@@ -80,4 +81,9 @@ Deno.test("is valid anagram (efficient)", () => {
 
 Deno.test("jewels and stones", () => {
   assertEquals(3, numJewelsInStones("aA", "aAAbbbb"));
+});
+
+Deno.test("defanging an IP address", () => {
+  assertEquals("1[.]1[.]1[.]1", defangIPaddr("1.1.1.1"));
+  assertEquals("255[.]100[.]50[.]0", defangIPaddr("255.100.50.0"));
 });
