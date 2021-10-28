@@ -30,3 +30,10 @@ Deno.test("merge two sorted lists", () => {
   const mergedList = l1.mergeLists(l2);
   assertEquals([1, 1, 2, 3, 4, 4], L.List.toArray(mergedList));
 });
+
+Deno.test("remove duplicates from sorted list", () => {
+  const c = new L.ListNode(2, null);
+  const b = new L.ListNode(1, c);
+  const head = new L.ListNode(1, b);
+  assertEquals(null, L.deleteDuplicates(head));
+});

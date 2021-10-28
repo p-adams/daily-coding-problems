@@ -81,3 +81,7 @@ export function mergeTwoLists2(
     return l2;
   }
 }
+
+export function deleteDuplicates(head: ListNode | null): ListNode | null {
+  return null;
+}
