@@ -56,16 +56,16 @@ export class List {
   mergeLists(l2: ListNode | null): ListNode | null {
     return this.head!.mergeLists(l2);
   }
-  static toArray(list: ListNode | null) {
-    const result = [];
-    let curr = list;
-    let i = 0;
-    while (curr !== null) {
-      result[i++] = curr?.val;
-      curr = curr?.next;
-    }
-    return result;
+}
+export function toArray(list: ListNode | null) {
+  const result = [];
+  let curr = list;
+  let i = 0;
+  while (curr !== null) {
+    result[i++] = curr?.val;
+    curr = curr?.next;
   }
+  return result;
 }
 export function mergeTwoLists2(
   l1: ListNode | null,

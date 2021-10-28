@@ -28,7 +28,7 @@ Deno.test("merge two sorted lists", () => {
   const n2 = new L.ListNode(3, n3);
   const l2 = new L.ListNode(1, n2);
   const mergedList = l1.mergeLists(l2);
-  assertEquals([1, 1, 2, 3, 4, 4], L.List.toArray(mergedList));
+  assertEquals([1, 1, 2, 3, 4, 4], L.toArray(mergedList));
 });
 
 Deno.test("remove duplicates from sorted list", () => {
