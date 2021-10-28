@@ -81,7 +81,31 @@ export function mergeTwoLists2(
     return l2;
   }
 }
-
-export function deleteDuplicates(head: ListNode | null): ListNode | null {
-  return null;
+// iterative approach
+export function itrDeleteDuplicates(head: ListNode | null): ListNode | null {
+  const current = head;
+  while (head) {
+    const val = head.val;
+    const current = head.next;
+    if (current != null && current.val == val) {
+      head.next = head?.next?.next!;
+    } else {
+      head = head.next;
+    }
+  }
+  return current;
+}
+// recursive approach
+export function recDeleteDuplicates(head: ListNode | null): ListNode | null {
+  if (!head) {
+    return head;
+  }
+  const next = recDeleteDuplicates(head.next);
+  if (!next) {
+    return head;
+  }
+  if (head.val === next.val) {
+    head.next = next.next;
+  }
+  return head;
 }
