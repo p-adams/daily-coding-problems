@@ -32,6 +32,7 @@ import {
   pivotIndex,
   nextGreaterElement,
   maximumWealth,
+  majorityElement,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -405,3 +406,11 @@ Deno.test("richest customer wealth", () => {
     ])
   );
 });
+
+Deno.test(
+  "majority element (element that appears more than [n/2] times)",
+  () => {
+    assertEquals(3, majorityElement([3, 2, 3]));
+    assertEquals(2, majorityElement([2, 2]));
+  }
+);

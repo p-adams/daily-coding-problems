@@ -553,3 +553,23 @@ export function maximumWealth(accounts: number[][]): number {
   }
   return max;
 }
+
+export function majorityElement(nums: number[]) {
+  const m = new Map<number, number>();
+  const l = Math.floor(nums.length / 2);
+  for (const n of nums) {
+    if (m.has(n)) {
+      const occurence = m.get(n);
+      if (occurence) {
+        m.set(n, occurence + 1);
+      }
+    } else {
+      m.set(n, 1);
+    }
+  }
+  let result;
+  m.forEach((value, key) => {
+    if (value > l) result = key;
+  });
+  return result;
+}
