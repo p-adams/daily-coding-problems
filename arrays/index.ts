@@ -587,10 +587,17 @@ function _getMin(nums: number[]) {
 }
 
 export function findDisappearedNumbers(nums: number[]): number[] {
-  const range: number[] = [];
-  for (let i = 1; i <= nums.length; i++) {
-    range.push(i);
+  for (const n of nums) {
+    const idx = Math.abs(n) - 1;
+    if (nums[idx] > 0) {
+      nums[idx] *= -1;
+    }
   }
-
-  return range.filter((n) => !nums.includes(n));
+  const result: number[] = [];
+  for (const i in nums) {
+    if (nums[i] > 0) {
+      result.push(Number(i) + 1);
+    }
+  }
+  return result;
 }
