@@ -33,6 +33,7 @@ import {
   nextGreaterElement,
   maximumWealth,
   majorityElement,
+  findDisappearedNumbers,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -414,3 +415,7 @@ Deno.test(
     assertEquals(2, majorityElement([2, 2]));
   }
 );
+
+Deno.test("find all numbers disappeared in an array", () => {
+  assertEquals([5, 6], findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+});

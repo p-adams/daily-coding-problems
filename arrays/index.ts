@@ -573,3 +573,7 @@ export function majorityElement(nums: number[]) {
   });
   return result;
 }
+
+export function findDisappearedNumbers(nums: number[]): number[] {
+  return [];
+}
