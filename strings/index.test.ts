@@ -11,6 +11,7 @@ import {
   isAnagram,
   numJewelsInStones,
   defangIPaddr,
+  convertToTitle,
 } from "./index.ts";
 
 Deno.test("valid parentheses", () => {
@@ -86,4 +87,8 @@ Deno.test("jewels and stones", () => {
 Deno.test("defanging an IP address", () => {
   assertEquals("1[.]1[.]1[.]1", defangIPaddr("1.1.1.1"));
   assertEquals("255[.]100[.]50[.]0", defangIPaddr("255.100.50.0"));
+});
+
+Deno.test("Excel Sheet Column Title", () => {
+  assertEquals("", convertToTitle(1));
 });

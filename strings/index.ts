@@ -199,3 +199,7 @@ export function numJewelsInStones(jewels: string, stones: string): number {
 export function defangIPaddr(address: string): string {
   return address.split(".").join("[.]");
 }
+
+export function convertToTitle(columnNumber: number): string {
+  return "";
+}
