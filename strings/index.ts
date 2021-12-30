@@ -201,5 +201,16 @@ export function defangIPaddr(address: string): string {
 }
 
 export function convertToTitle(columnNumber: number): string {
-  return "";
+  let result = "";
+  while (columnNumber) {
+    let rem = columnNumber % 26;
+    let quo = Math.floor(columnNumber / 26);
+    if (rem === 0) {
+      rem = 26;
+      quo--;
+    }
+    result = String.fromCharCode(64 + rem) + result;
+    columnNumber = quo;
+  }
+  return result;
 }

@@ -90,5 +90,7 @@ Deno.test("defanging an IP address", () => {
 });
 
 Deno.test("Excel Sheet Column Title", () => {
-  assertEquals("", convertToTitle(1));
+  assertEquals("A", convertToTitle(1));
+  assertEquals("AB", convertToTitle(28));
+  assertEquals("ZY", convertToTitle(701));
 });
