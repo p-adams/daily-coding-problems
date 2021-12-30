@@ -573,7 +573,18 @@ export function majorityElement(nums: number[]) {
   });
   return result;
 }
-
+function _getMax(nums: number[]) {
+  let max = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    max = Math.max(max, nums[i]);
+  }
+}
+function _getMin(nums: number[]) {
+  let min = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    min = Math.min(min, nums[i]);
+  }
+}
 export function findDisappearedNumbers(nums: number[]): number[] {
   return [];
 }
