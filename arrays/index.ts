@@ -587,7 +587,6 @@ function _getMin(nums: number[]) {
 }
 
 export function findDisappearedNumbers(nums: number[]): number[] {
-  nums.sort();
   const range: number[] = [];
   for (let i = 1; i <= nums.length; i++) {
     range.push(i);
