@@ -585,6 +585,13 @@ function _getMin(nums: number[]) {
     min = Math.min(min, nums[i]);
   }
 }
+
 export function findDisappearedNumbers(nums: number[]): number[] {
-  return [];
+  nums.sort();
+  const range: number[] = [];
+  for (let i = 1; i <= nums.length; i++) {
+    range.push(i);
+  }
+
+  return range.filter((n) => !nums.includes(n));
 }

@@ -418,4 +418,5 @@ Deno.test(
 
 Deno.test("find all numbers disappeared in an array", () => {
   assertEquals([5, 6], findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+  assertEquals([2], findDisappearedNumbers([1, 1]));
 });
