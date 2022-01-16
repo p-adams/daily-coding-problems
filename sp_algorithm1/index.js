@@ -30,12 +30,11 @@ function binarySearchHelper(nums, start, end, target) {
 function binarySearch2(nums, target) {
   return binarySearchHelper(nums, 0, nums.length - 1, target);
 }
-function firstBadVersion() {}
+
 function searchInsertPosition() {}
 
 export const Day1 = {
   binarySearch,
   binarySearch2,
-  firstBadVersion,
   searchInsertPosition,
 };
