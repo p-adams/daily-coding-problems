@@ -31,7 +31,23 @@ function binarySearch2(nums, target) {
   return binarySearchHelper(nums, 0, nums.length - 1, target);
 }
 
-function searchInsertPosition() {}
+function searchInsertPosition(nums, target) {
+  let l = 0,
+    r = nums.length - 1;
+  while (l <= r) {
+    const mid = Math.floor((l + r) / 2);
+    if (nums[mid] === target) {
+      return mid;
+    } else if (nums[mid] < target) {
+      l = mid + 1;
+    } else {
+      r = mid - 1;
+    }
+  }
+
+  // TODO return index where it would be
+  return -1;
+}
 
 export const Day1 = {
   binarySearch,
