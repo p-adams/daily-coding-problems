@@ -214,3 +214,30 @@ export function convertToTitle(columnNumber: number): string {
   }
   return result;
 }
+
+function isPalindrome(s: string) {
+  // formatted string
+  const fmtS = s.toLowerCase().replace(/[\W_]/g, "");
+  for (let i = fmtS.length - 1, j = 0; i >= j; i--, j++) {
+    if (fmtS[i] !== fmtS[j]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+export function longestPalindrome(s: string) {
+  let max = s[0];
+  for (let i = 0; i < s.length; i++) {
+    for (let j = 1; j < s.length; j++) {
+      const sbstr = s.substring(i, j + 1);
+      if (isPalindrome(sbstr)) {
+        const ps = sbstr;
+        if (ps.length > max.length) {
+          max = ps;
+        }
+      }
+    }
+  }
+  return max;
+}
