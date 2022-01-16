@@ -217,9 +217,9 @@ export function convertToTitle(columnNumber: number): string {
 
 function isPalindrome(s: string) {
   // formatted string
-  const fmtS = s.toLowerCase().replace(/[\W_]/g, "");
-  for (let i = fmtS.length - 1, j = 0; i >= j; i--, j++) {
-    if (fmtS[i] !== fmtS[j]) {
+  const ss = s.toLowerCase().replace(/[\W_]/g, "");
+  for (let i = ss.length - 1, j = 0; i >= j; i--, j++) {
+    if (ss[i] !== ss[j]) {
       return false;
     }
   }
@@ -227,17 +227,28 @@ function isPalindrome(s: string) {
 }
 
 export function longestPalindrome(s: string) {
-  let max = s[0];
+  if (isPalindrome(s)) {
+    return s;
+  }
+  let subString = s[0];
+
   for (let i = 0; i < s.length; i++) {
-    for (let j = 1; j < s.length; j++) {
-      const sbstr = s.substring(i, j + 1);
-      if (isPalindrome(sbstr)) {
-        const ps = sbstr;
-        if (ps.length > max.length) {
-          max = ps;
-        }
-      }
+    let left = i - 1;
+    let right = i + 1;
+    let curr = s[i];
+
+    while (s[i] === s[left]) {
+      curr += s[left];
+      left--;
+    }
+    while (s[left] === s[right]) {
+      curr = s[left] + curr + s[right];
+      left--;
+      right++;
+    }
+    if (curr.length > subString.length) {
+      subString = curr;
     }
   }
-  return max;
+  return subString;
 }
