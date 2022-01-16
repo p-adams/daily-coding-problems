@@ -44,9 +44,7 @@ function searchInsertPosition(nums, target) {
       r = mid - 1;
     }
   }
-
-  // TODO return index where it would be
-  return -1;
+  return l;
 }
 
 export const Day1 = {

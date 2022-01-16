@@ -11,6 +11,6 @@ Deno.test("Day 1: Binary Search", () => {
 
 Deno.test("Day 1: Search Insert Position", () => {
   assertEquals(2, Day1.searchInsertPosition([1, 3, 5, 6], 5));
-  //assertEquals(1, Day1.searchInsertPosition([1, 3, 5, 6], 2));
+  assertEquals(1, Day1.searchInsertPosition([1, 3, 5, 6], 2));
   assertEquals(4, Day1.searchInsertPosition([1, 3, 5, 6], 7));
 });
