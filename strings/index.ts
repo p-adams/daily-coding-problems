@@ -252,3 +252,7 @@ export function longestPalindrome(s: string) {
   }
   return subString;
 }
+
+export function wordPattern(pattern: string, s: string): boolean {
+  return true;
+}
