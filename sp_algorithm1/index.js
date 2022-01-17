@@ -55,6 +55,9 @@ export const Day1 = {
 
 export const Day2 = {
   sortedSquares: (nums) => {
-    return nums;
+    for (let i = 0; i < nums.length; ++i) {
+      nums[i] = nums[i] ** 2;
+    }
+    return nums.sort((a, b) => a - b);
   },
 };
