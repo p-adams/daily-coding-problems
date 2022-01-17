@@ -110,6 +110,7 @@ Deno.test("Longest Palindromic Substring", () => {
 
 Deno.test("Word Pattern", () => {
   assertEquals(true, wordPattern("abba", "apple pear pear apple"));
+  assertEquals(true, wordPattern("abab", "apple pear apple pear"));
   assertEquals(false, wordPattern("abba", "apple pear pear banana"));
   assertEquals(false, wordPattern("aaaa", "apple kiwi kiwi apple"));
 });
