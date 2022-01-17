@@ -52,3 +52,9 @@ export const Day1 = {
   binarySearch2,
   searchInsertPosition,
 };
+
+export const Day2 = {
+  sortedSquares: (nums) => {
+    return nums;
+  },
+};
