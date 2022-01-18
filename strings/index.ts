@@ -278,3 +278,7 @@ export function wordPattern(pattern: string, s: string): boolean {
 
   return true;
 }
+
+export function isIsomorphic(s: string, t: string): boolean {
+  return s === t;
+}
