@@ -601,3 +601,7 @@ export function findDisappearedNumbers(nums: number[]): number[] {
   }
   return result;
 }
+
+export function canPlaceFlowers(flowerbed: number[], n: number): boolean {
+  return true;
+}
