@@ -113,4 +113,5 @@ Deno.test("Word Pattern", () => {
   assertEquals(true, wordPattern("abab", "apple pear apple pear"));
   assertEquals(false, wordPattern("abba", "apple pear pear banana"));
   assertEquals(false, wordPattern("aaaa", "apple kiwi kiwi apple"));
+  assertEquals(false, wordPattern("aba", "apple apple apple pear"));
 });

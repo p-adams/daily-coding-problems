@@ -254,5 +254,27 @@ export function longestPalindrome(s: string) {
 }
 
 export function wordPattern(pattern: string, s: string): boolean {
+  const words = s.split(" ");
+  if (pattern.length !== words.length) return false;
+
+  const m = new Map<string, string>();
+  const m2 = new Map<string, string>();
+  let j = 0;
+  for (let i = 0; i < words.length; ++i) {
+    const w = words[i];
+    const p = pattern[j];
+    if (m.has(p) || m2.has(w)) {
+      const t = m.get(p);
+      const t2 = m2.get(w);
+      if (t !== w || t2 !== p) {
+        return false;
+      }
+    } else {
+      m.set(p, w);
+      m2.set(w, p);
+    }
+    j++;
+  }
+
   return true;
 }
