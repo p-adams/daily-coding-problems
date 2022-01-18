@@ -422,6 +422,8 @@ Deno.test("find all numbers disappeared in an array", () => {
   assertEquals([2], findDisappearedNumbers([1, 1]));
 });
 
-Deno.test("", () => {
+Deno.test("can place flowers", () => {
   assertEquals(true, canPlaceFlowers([1, 0, 0, 0, 1], 1));
+  assertEquals(true, canPlaceFlowers([0, 0, 1, 0, 1, 0, 0], 2));
+  assertEquals(false, canPlaceFlowers([1, 0, 0, 0, 1], 2));
 });
