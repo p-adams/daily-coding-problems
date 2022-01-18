@@ -278,7 +278,28 @@ export function wordPattern(pattern: string, s: string): boolean {
 
   return true;
 }
-
+// same idea as wordPattern, except iterating over two strings instead
+// of an array of strings (words).
 export function isIsomorphic(s: string, t: string): boolean {
-  return s === t;
+  if (s.length !== t.length) return false;
+  const m = new Map<string, string>();
+  const m2 = new Map<string, string>();
+  let j = 0;
+  for (let i = 0; i < t.length; ++i) {
+    const w = t[i];
+    const p = s[j];
+    if (m.has(p) || m2.has(w)) {
+      const t = m.get(p);
+      const t2 = m2.get(w);
+      if (t !== w || t2 !== p) {
+        return false;
+      }
+    } else {
+      m.set(p, w);
+      m2.set(w, p);
+    }
+    j++;
+  }
+
+  return true;
 }

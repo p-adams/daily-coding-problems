@@ -119,4 +119,6 @@ Deno.test("Word Pattern", () => {
 
 Deno.test("Isomorphic String", () => {
   assertEquals(true, isIsomorphic("egg", "add"));
+  assertEquals(false, isIsomorphic("foo", "bar"));
+  assertEquals(true, isIsomorphic("paper", "title"));
 });
