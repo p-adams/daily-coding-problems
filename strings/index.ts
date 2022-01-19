@@ -303,3 +303,7 @@ export function isIsomorphic(s: string, t: string): boolean {
 
   return true;
 }
+
+export function strStr(haystack: string, needle: string) {
+  return -1;
+}

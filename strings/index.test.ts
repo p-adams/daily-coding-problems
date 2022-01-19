@@ -15,6 +15,7 @@ import {
   longestPalindrome,
   wordPattern,
   isIsomorphic,
+  strStr,
 } from "./index.ts";
 
 Deno.test("valid parentheses", () => {
@@ -121,4 +122,8 @@ Deno.test("Isomorphic String", () => {
   assertEquals(true, isIsomorphic("egg", "add"));
   assertEquals(false, isIsomorphic("foo", "bar"));
   assertEquals(true, isIsomorphic("paper", "title"));
+});
+
+Deno.test("Implement strStr()", () => {
+  assertEquals(2, strStr("hello", "ll"));
 });
