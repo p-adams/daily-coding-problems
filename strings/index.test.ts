@@ -126,4 +126,6 @@ Deno.test("Isomorphic String", () => {
 
 Deno.test("Implement strStr()", () => {
   assertEquals(2, strStr("hello", "ll"));
+  assertEquals(1, strStr("meow", "e"));
+  assertEquals(-1, strStr("aaaaa", "bba"));
 });

@@ -303,7 +303,11 @@ export function isIsomorphic(s: string, t: string): boolean {
 
   return true;
 }
-
+// can needle be found in haystack
 export function strStr(haystack: string, needle: string) {
-  return -1;
+  if (needle.length <= 0 || needle === haystack) return 0;
+  if (needle.length > haystack.length) return -1;
+  return haystack.split(needle).length > 1
+    ? haystack.split(needle)[0].length
+    : -1;
 }
