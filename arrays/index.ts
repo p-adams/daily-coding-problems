@@ -618,3 +618,7 @@ export function canPlaceFlowers(flowerbed: number[], n: number): boolean {
   }
   return count >= n;
 }
+
+export function canCompleteCircuit(gas: number[], cost: number[]): number {
+  return -1;
+}

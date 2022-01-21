@@ -35,6 +35,7 @@ import {
   majorityElement,
   findDisappearedNumbers,
   canPlaceFlowers,
+  canCompleteCircuit,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -426,4 +427,8 @@ Deno.test("can place flowers", () => {
   assertEquals(true, canPlaceFlowers([1, 0, 0, 0, 1], 1));
   assertEquals(true, canPlaceFlowers([0, 0, 1, 0, 1, 0, 0], 2));
   assertEquals(false, canPlaceFlowers([1, 0, 0, 0, 1], 2));
+});
+
+Deno.test("gas station", () => {
+  assertEquals(-1, canCompleteCircuit([1, 2, 3, 4, 5], [3, 4, 5, 1, 2]));
 });
