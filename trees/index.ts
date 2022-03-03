@@ -91,3 +91,7 @@ function arrToBST(nums: number[], start: number, end: number): TreeNode | null {
 export function sortedArrayToBST(nums: number[]): TreeNode | null {
   return arrToBST(nums, 0, nums.length - 1);
 }
+
+export function pathSum(root: TreeNode, targetSum: number): boolean {
+  return false;
+}

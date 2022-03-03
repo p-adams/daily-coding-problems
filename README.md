@@ -1,3 +1,3 @@
 # Daily Coding Problems
 
-TypeScript solutions to various coding problems
+TypeScript and JavaScript solutions to various coding problems

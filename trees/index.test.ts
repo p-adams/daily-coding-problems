@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
-import { Trie, sortedArrayToBST } from "./index.ts";
+import { Trie, sortedArrayToBST, pathSum, TreeNode } from "./index.ts";
 
 Deno.test("prefix tree", () => {
   const trie = new Trie();
@@ -24,4 +24,9 @@ Deno.test("convert sorted array to binary search tree", () => {
     },
     JSON.parse(JSON.stringify(sortedArrayToBST([-10, -3, 0, 5, 9])))
   );
+});
+
+Deno.test("values in path add up to target sum", () => {
+  const root = new TreeNode();
+  assertEquals(false, pathSum(root, 0));
 });
