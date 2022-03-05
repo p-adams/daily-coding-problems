@@ -93,5 +93,32 @@ export function sortedArrayToBST(nums: number[]): TreeNode | null {
 }
 
 export function pathSum(root: TreeNode, targetSum: number): boolean {
+  pathSumHelper(root, targetSum, 0, "");
   return false;
 }
+
+export function pathSumHelper(
+  node: TreeNode | null,
+  targetSum: number,
+  acc: number,
+  ex: string
+) {
+  if (node === null) {
+    return;
+  }
+  pathSumHelper(node.left, targetSum, 0, "left");
+  console.log(`value ${node.val}`);
+  pathSumHelper(node.right, targetSum, 0, "right");
+}
+
+const root = new TreeNode(5);
+root.left = new TreeNode(4);
+root.right = new TreeNode(8);
+root.left.left = new TreeNode(11);
+root.left.left.left = new TreeNode(7);
+root.left.left.right = new TreeNode(2);
+root.right.right = new TreeNode(4);
+root.right.left = new TreeNode(13);
+root.right.right.right = new TreeNode(1);
+
+console.log(pathSum(root, 22));
