@@ -93,32 +93,40 @@ export function sortedArrayToBST(nums: number[]): TreeNode | null {
 }
 
 export function pathSum(root: TreeNode, targetSum: number): boolean {
-  pathSumHelper(root, targetSum, 0, "");
-  return false;
+  const paths = new Array(5000);
+  return pathSumHelper(root, targetSum, paths, 0);
 }
 
 export function pathSumHelper(
   node: TreeNode | null,
   targetSum: number,
-  acc: number,
-  ex: string
-) {
+  paths: number[],
+  len: number
+): boolean {
+  let isMatch = false;
+
   if (node === null) {
-    return;
+    return false;
   }
-  pathSumHelper(node.left, targetSum, 0, "left");
-  console.log(`value ${node.val}`);
-  pathSumHelper(node.right, targetSum, 0, "right");
+
+  paths[len] = node.val;
+  len++;
+
+  if (node.left === null && node.right === null && !isMatch) {
+    let sum = 0;
+    for (let i = 0; i < len; ++i) {
+      sum += paths[i];
+      if (sum === targetSum) {
+        isMatch = true;
+      }
+    }
+  } else {
+    if (
+      pathSumHelper(node.left, targetSum, paths, len) ||
+      pathSumHelper(node.right, targetSum, paths, len)
+    ) {
+      return true;
+    }
+  }
+  return isMatch;
 }
-
-const root = new TreeNode(5);
-root.left = new TreeNode(4);
-root.right = new TreeNode(8);
-root.left.left = new TreeNode(11);
-root.left.left.left = new TreeNode(7);
-root.left.left.right = new TreeNode(2);
-root.right.right = new TreeNode(4);
-root.right.left = new TreeNode(13);
-root.right.right.right = new TreeNode(1);
-
-console.log(pathSum(root, 22));

@@ -26,7 +26,15 @@ Deno.test("convert sorted array to binary search tree", () => {
   );
 });
 
-Deno.test("values in path add up to target sum", () => {
-  const root = new TreeNode();
-  assertEquals(false, pathSum(root, 0));
+Deno.test("values in root - leaf path of tree add up to 22", () => {
+  const root = new TreeNode(5);
+  root.left = new TreeNode(4);
+  root.right = new TreeNode(8);
+  root.left.left = new TreeNode(11);
+  root.left.left.left = new TreeNode(7);
+  root.left.left.right = new TreeNode(2);
+  root.right.right = new TreeNode(4);
+  root.right.left = new TreeNode(13);
+  root.right.right.right = new TreeNode(1);
+  assertEquals(true, pathSum(root, 22));
 });
