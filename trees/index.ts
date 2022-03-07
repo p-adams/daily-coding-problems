@@ -114,3 +114,22 @@ export function pathSumHelper(
     pathSumHelper(node.right, sum + node.val, targetSum)
   );
 }
+
+function isMirror(
+  root1: TreeNode | null | undefined,
+  root2: TreeNode | null | undefined
+): boolean {
+  if (root1 === null && root2 === null) {
+    return true;
+  }
+  if (root1?.val === root2?.val) {
+    return (
+      isMirror(root1?.left, root2?.right) && isMirror(root1?.right, root2?.left)
+    );
+  }
+  return false;
+}
+
+export function isSymmetric(node: TreeNode | null) {
+  return isMirror(node, node);
+}

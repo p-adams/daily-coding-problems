@@ -1,5 +1,11 @@
 import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
-import { Trie, sortedArrayToBST, pathSum, TreeNode } from "./index.ts";
+import {
+  Trie,
+  sortedArrayToBST,
+  pathSum,
+  TreeNode,
+  isSymmetric,
+} from "./index.ts";
 
 Deno.test("prefix tree", () => {
   const trie = new Trie();
@@ -37,4 +43,15 @@ Deno.test("values in root - leaf path of tree add up to 22", () => {
   root.right.left = new TreeNode(13);
   root.right.right.right = new TreeNode(1);
   assertEquals(true, pathSum(root, 22));
+});
+
+Deno.test("symmetric tree", () => {
+  const root = new TreeNode(1);
+  root.left = new TreeNode(2);
+  root.left.left = new TreeNode(3);
+  root.left.right = new TreeNode(4);
+  root.right = new TreeNode(2);
+  root.right.right = new TreeNode(3);
+  root.right.left = new TreeNode(4);
+  assertEquals(true, isSymmetric(root));
 });
