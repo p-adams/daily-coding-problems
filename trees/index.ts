@@ -93,40 +93,24 @@ export function sortedArrayToBST(nums: number[]): TreeNode | null {
 }
 
 export function pathSum(root: TreeNode, targetSum: number): boolean {
-  const paths = new Array(5000);
-  return pathSumHelper(root, targetSum, paths, 0);
+  return pathSumHelper(root, 0, targetSum);
 }
 
 export function pathSumHelper(
   node: TreeNode | null,
-  targetSum: number,
-  paths: number[],
-  len: number
+  sum: number,
+  targetSum: number
 ): boolean {
-  let isMatch = false;
-
   if (node === null) {
     return false;
   }
 
-  paths[len] = node.val;
-  len++;
-
-  if (node.left === null && node.right === null && !isMatch) {
-    let sum = 0;
-    for (let i = 0; i < len; ++i) {
-      sum += paths[i];
-      if (sum === targetSum) {
-        isMatch = true;
-      }
-    }
-  } else {
-    if (
-      pathSumHelper(node.left, targetSum, paths, len) ||
-      pathSumHelper(node.right, targetSum, paths, len)
-    ) {
-      return true;
-    }
+  if (node.left === null && node.right === null) {
+    return sum + node.val === targetSum;
   }
-  return isMatch;
+
+  return (
+    pathSumHelper(node.left, sum + node.val, targetSum) ||
+    pathSumHelper(node.right, sum + node.val, targetSum)
+  );
 }
