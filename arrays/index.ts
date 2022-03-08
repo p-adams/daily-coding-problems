@@ -190,6 +190,30 @@ export function containsDuplicates2(nums: number[]): boolean {
   return new Set([...nums]).size !== nums.length;
 }
 
+function containsDuplicate3(nums: number[]): boolean {
+  const m = new Map();
+  for (const num of nums) {
+    if (m.has(num)) {
+      const c = m.get(num);
+      if (c) {
+        m.set(num, c + 1);
+      }
+    } else {
+      m.set(num, 1);
+    }
+  }
+
+  for (const [_, v] of m.entries()) {
+    if (v > 1) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+console.log(containsDuplicate3([1, 2, 3, 1]));
+
 export function moveZeroes(nums: number[]) {
   for (let i = nums.length - 1; i >= 0; i--) {
     const current = nums[i];
