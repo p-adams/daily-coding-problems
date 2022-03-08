@@ -190,7 +190,7 @@ export function containsDuplicates2(nums: number[]): boolean {
   return new Set([...nums]).size !== nums.length;
 }
 
-function containsDuplicate3(nums: number[]): boolean {
+function _containsDuplicate3(nums: number[]): boolean {
   const m = new Map();
   for (const num of nums) {
     if (m.has(num)) {
@@ -211,8 +211,6 @@ function containsDuplicate3(nums: number[]): boolean {
 
   return false;
 }
-
-console.log(containsDuplicate3([1, 2, 3, 1]));
 
 export function moveZeroes(nums: number[]) {
   for (let i = nums.length - 1; i >= 0; i--) {
@@ -645,4 +643,17 @@ export function canPlaceFlowers(flowerbed: number[], n: number): boolean {
 
 export function canCompleteCircuit(gas: number[], cost: number[]): number {
   return -1;
+}
+
+export function hasDistinctIndices(nums: number[], k: number): boolean {
+  const m = new Map();
+  for (let i = 0; i < nums.length; ++i) {
+    const num = nums[i];
+    if (m.has(num) && i - m.get(num) <= k) {
+      return true;
+    } else {
+      m.set(num, i);
+    }
+  }
+  return false;
 }
