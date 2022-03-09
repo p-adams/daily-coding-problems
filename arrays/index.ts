@@ -670,3 +670,7 @@ function _buildArray(nums: number[]): number[] {
 export function getConcatenation(nums: number[]): number[] {
   return [...nums, ...nums];
 }
+
+export function runningSum(nums: number[]): number[] {
+  return nums;
+}
