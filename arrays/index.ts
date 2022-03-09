@@ -666,3 +666,7 @@ function _buildArray(nums: number[]): number[] {
 
   return ans;
 }
+
+export function getConcatenation(nums: number[]): number[] {
+  return [];
+}

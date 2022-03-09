@@ -36,6 +36,7 @@ import {
   findDisappearedNumbers,
   canPlaceFlowers,
   canCompleteCircuit,
+  getConcatenation,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -431,4 +432,8 @@ Deno.test("can place flowers", () => {
 
 Deno.test("gas station", () => {
   assertEquals(-1, canCompleteCircuit([1, 2, 3, 4, 5], [3, 4, 5, 1, 2]));
+});
+
+Deno.test("create array ans of length 2n", () => {
+  assertEquals([1, 1], getConcatenation([1]));
 });
