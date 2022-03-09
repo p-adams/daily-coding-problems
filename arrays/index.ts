@@ -668,5 +668,5 @@ function _buildArray(nums: number[]): number[] {
 }
 
 export function getConcatenation(nums: number[]): number[] {
-  return [];
+  return [...nums, ...nums];
 }

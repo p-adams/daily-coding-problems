@@ -436,4 +436,6 @@ Deno.test("gas station", () => {
 
 Deno.test("create array ans of length 2n", () => {
   assertEquals([1, 1], getConcatenation([1]));
+  assertEquals([1, 3, 2, 1, 1, 3, 2, 1], getConcatenation([1, 3, 2, 1]));
+  assertEquals([3, 3, 3, 3, 3, 3], getConcatenation([3, 3, 3]));
 });
