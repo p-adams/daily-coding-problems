@@ -672,5 +672,22 @@ export function getConcatenation(nums: number[]): number[] {
 }
 
 export function runningSum(nums: number[]): number[] {
+  let sum = 0;
+  for (let index = 0; index < nums.length; index++) {
+    const element = nums[index];
+    nums[index] = sum += element;
+  }
   return nums;
+}
+
+export function finalValueAfterOperations(operations: string[]): number {
+  let count = 0;
+  for (const operation of operations) {
+    if (operation.includes("+")) {
+      count++;
+    } else if (operation.includes("-")) {
+      count--;
+    }
+  }
+  return count;
 }

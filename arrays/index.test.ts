@@ -38,6 +38,7 @@ import {
   canCompleteCircuit,
   getConcatenation,
   runningSum,
+  finalValueAfterOperations,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -442,5 +443,16 @@ Deno.test("create array ans of length 2n", () => {
 });
 
 Deno.test("running sum of 1d array", () => {
-  assertEquals([], runningSum([]));
+  assertEquals([1, 3, 6, 10], runningSum([1, 2, 3, 4]));
+  assertEquals([1, 2, 3, 4, 5], runningSum([1, 1, 1, 1, 1]));
+  assertEquals([3, 4, 6, 16, 17], runningSum([3, 1, 2, 10, 1]));
 });
+
+Deno.test(
+  "get final value after n number of increment and decrement operations",
+  () => {
+    assertEquals(1, finalValueAfterOperations(["--X", "X++", "X++"]));
+    assertEquals(3, finalValueAfterOperations(["++X", "++X", "X++"]));
+    assertEquals(0, finalValueAfterOperations(["X++", "++X", "--X", "X--"]));
+  }
+);
