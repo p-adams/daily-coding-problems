@@ -39,6 +39,7 @@ import {
   getConcatenation,
   runningSum,
   finalValueAfterOperations,
+  mostWordsFound,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -456,3 +457,7 @@ Deno.test(
     assertEquals(0, finalValueAfterOperations(["X++", "++X", "--X", "X--"]));
   }
 );
+
+Deno.test("longest sentence in list of sentences", () => {
+  assertEquals(3, mostWordsFound(["asdf asdf asdf", "asdf", "qwerty qwerty"]));
+});

@@ -691,3 +691,11 @@ export function finalValueAfterOperations(operations: string[]): number {
   }
   return count;
 }
+
+export function mostWordsFound(sentences: string[]): number {
+  let max = 0;
+  for (const sentence of sentences) {
+    max = Math.max(max, sentence.split(" ").length);
+  }
+  return max;
+}
