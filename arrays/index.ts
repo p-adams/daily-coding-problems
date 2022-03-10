@@ -706,3 +706,21 @@ export function shuffle(nums: number[], n: number): number[] {
     .map((f, i) => [f, nums.slice(n)[i]])
     .flat();
 }
+
+export function numIdenticalPairs(nums: number[]): number {
+  const m = new Map();
+  for (let i = 0; i < nums.length; ++i) {
+    if (m.has(nums[i])) {
+      const v = m.get(nums[i]);
+      m.set(nums[i], v + 1);
+    } else {
+      m.set(nums[i], 1);
+    }
+  }
+
+  let sum = 0;
+  for (const v of m.values()) {
+    sum += (v * (v - 1)) / 2;
+  }
+  return sum;
+}

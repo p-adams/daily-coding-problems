@@ -41,6 +41,7 @@ import {
   finalValueAfterOperations,
   mostWordsFound,
   shuffle,
+  numIdenticalPairs,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -466,4 +467,8 @@ Deno.test("longest sentence in list of sentences", () => {
 Deno.test("shuffle array", () => {
   assertEquals([1, 2, 1, 2], shuffle([1, 1, 2, 2], 2));
   assertEquals([2, 3, 5, 4, 1, 7], shuffle([2, 5, 1, 3, 4, 7], 3));
+});
+
+Deno.test("number of good pairs", () => {
+  assertEquals(4, numIdenticalPairs([1, 2, 3, 1, 1, 3]));
 });
