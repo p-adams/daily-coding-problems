@@ -750,16 +750,5 @@ export function kidsWithCandies(
 }
 
 export function smallerNumbersThanCurrent(nums: number[]): number[] {
-  const result = [];
-  for (let i = 0; i < nums.length; i++) {
-    let sum = 0;
-    for (let j = 0; j < nums.length; j++) {
-      if (j !== i && nums[j] < nums[i]) {
-        sum++;
-      }
-    }
-    result.push(sum);
-  }
-
-  return result;
+  return nums.map((num) => [...nums].sort((a, b) => a - b).indexOf(num));
 }
