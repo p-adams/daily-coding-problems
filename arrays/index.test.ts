@@ -43,6 +43,7 @@ import {
   shuffle,
   numIdenticalPairs,
   kidsWithCandies,
+  smallerNumbersThanCurrent,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -481,4 +482,8 @@ Deno.test("kids with greatest number of candies", () => {
     kidsWithCandies([2, 3, 5, 1, 3], 3)
   );
   assertEquals([false, true, true], kidsWithCandies([2, 8, 7], 1));
+});
+
+Deno.test("count of numbers smaller than current number", () => {
+  assertEquals([4, 0, 1, 1, 3], smallerNumbersThanCurrent([8, 1, 2, 2, 3]));
 });

@@ -748,3 +748,7 @@ export function kidsWithCandies(
 
   return result;
 }
+
+export function smallerNumbersThanCurrent(nums: number[]): number[] {
+  return nums;
+}
