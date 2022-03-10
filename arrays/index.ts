@@ -724,3 +724,27 @@ export function numIdenticalPairs(nums: number[]): number {
   }
   return sum;
 }
+
+export function kidsWithCandies(
+  candies: number[],
+  extraCandies: number
+): boolean[] {
+  const result = [];
+  let max = Number.MIN_VALUE;
+  for (let index = 0; index < candies.length; index++) {
+    if (candies[index] > max) {
+      max = candies[index];
+    }
+  }
+  for (let index = 0; index < candies.length; index++) {
+    const element = candies[index];
+
+    if (element + extraCandies >= max) {
+      result.push(true);
+    } else {
+      result.push(false);
+    }
+  }
+
+  return result;
+}

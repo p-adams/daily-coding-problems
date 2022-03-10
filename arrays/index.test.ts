@@ -42,6 +42,7 @@ import {
   mostWordsFound,
   shuffle,
   numIdenticalPairs,
+  kidsWithCandies,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -471,4 +472,13 @@ Deno.test("shuffle array", () => {
 
 Deno.test("number of good pairs", () => {
   assertEquals(4, numIdenticalPairs([1, 2, 3, 1, 1, 3]));
+});
+
+Deno.test("kids with greatest number of candies", () => {
+  assertEquals([true, false, true], kidsWithCandies([12, 1, 12], 10));
+  assertEquals(
+    [true, true, true, false, true],
+    kidsWithCandies([2, 3, 5, 1, 3], 3)
+  );
+  assertEquals([false, true, true], kidsWithCandies([2, 8, 7], 1));
 });
