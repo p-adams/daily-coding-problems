@@ -40,6 +40,7 @@ import {
   runningSum,
   finalValueAfterOperations,
   mostWordsFound,
+  shuffle,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -460,4 +461,9 @@ Deno.test(
 
 Deno.test("longest sentence in list of sentences", () => {
   assertEquals(3, mostWordsFound(["asdf asdf asdf", "asdf", "qwerty qwerty"]));
+});
+
+Deno.test("shuffle array", () => {
+  assertEquals([1, 2, 1, 2], shuffle([1, 1, 2, 2], 2));
+  assertEquals([2, 3, 5, 4, 1, 7], shuffle([2, 5, 1, 3, 4, 7], 3));
 });

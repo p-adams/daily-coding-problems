@@ -699,3 +699,10 @@ export function mostWordsFound(sentences: string[]): number {
   }
   return max;
 }
+
+export function shuffle(nums: number[], n: number): number[] {
+  return nums
+    .slice(0, n)
+    .map((f, i) => [f, nums.slice(n)[i]])
+    .flat();
+}
