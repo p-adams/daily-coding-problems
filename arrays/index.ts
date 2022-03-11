@@ -761,3 +761,18 @@ export function decode(encoded: number[], first: number): number[] {
   }
   return res;
 }
+
+export function decompressRLElist(nums: number[]): number[] {
+  const result: number[] = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (i >= 0) {
+      const [fst, scd] = [nums[2 * i], nums[2 * i + 1]];
+      let ii = 0;
+      while (ii < fst) {
+        result.push(scd);
+        ++ii;
+      }
+    }
+  }
+  return result;
+}

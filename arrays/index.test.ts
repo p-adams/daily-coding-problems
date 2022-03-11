@@ -45,6 +45,7 @@ import {
   kidsWithCandies,
   smallerNumbersThanCurrent,
   decode,
+  decompressRLElist,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -495,4 +496,10 @@ Deno.test("count of numbers smaller than current number", () => {
 
 Deno.test("decode XORed array", () => {
   assertEquals([1, 0, 2, 1], decode([1, 2, 3], 1));
+});
+
+Deno.test("decompress run-length encoded list", () => {
+  assertEquals([], decompressRLElist([]));
+  assertEquals([2, 4, 4, 4], decompressRLElist([1, 2, 3, 4]));
+  assertEquals([1, 3, 3], decompressRLElist([1, 1, 2, 3]));
 });
