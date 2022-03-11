@@ -44,6 +44,7 @@ import {
   numIdenticalPairs,
   kidsWithCandies,
   smallerNumbersThanCurrent,
+  decode,
 } from "./index.ts";
 Deno.test("hourglass sum", () => {
   const m = [
@@ -475,6 +476,10 @@ Deno.test("number of good pairs", () => {
   assertEquals(4, numIdenticalPairs([1, 2, 3, 1, 1, 3]));
 });
 
+Deno.test("number of good pairs", () => {
+  assertEquals(4, numIdenticalPairs([1, 2, 3, 1, 1, 3]));
+});
+
 Deno.test("kids with greatest number of candies", () => {
   assertEquals([true, false, true], kidsWithCandies([12, 1, 12], 10));
   assertEquals(
@@ -486,4 +491,8 @@ Deno.test("kids with greatest number of candies", () => {
 
 Deno.test("count of numbers smaller than current number", () => {
   assertEquals([4, 0, 1, 1, 3], smallerNumbersThanCurrent([8, 1, 2, 2, 3]));
+});
+
+Deno.test("decode XORed array", () => {
+  assertEquals([1, 0, 2, 1], decode([1, 2, 3], 1));
 });

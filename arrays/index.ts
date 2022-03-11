@@ -752,3 +752,12 @@ export function kidsWithCandies(
 export function smallerNumbersThanCurrent(nums: number[]): number[] {
   return nums.map((num) => [...nums].sort((a, b) => a - b).indexOf(num));
 }
+
+export function decode(encoded: number[], first: number): number[] {
+  const res = [];
+  res[0] = first;
+  for (let index = 0; index < encoded.length; index++) {
+    res[index + 1] = res[index] ^ encoded[index];
+  }
+  return res;
+}
