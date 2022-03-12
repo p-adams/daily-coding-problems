@@ -13,3 +13,45 @@ export function createTargetArray(nums: number[], index: number[]): number[] {
 
   return target;
 }
+
+export function countMatches(
+  items: string[][],
+  ruleKey: "type" | "color" | "name",
+  ruleValue: string
+): number {
+  let count = 0;
+
+  return items.reduce((prev: any, curr: any) => {
+    const [type, color, name] = curr;
+    if (ruleKey === "type" && ruleValue === type) {
+      ++count;
+    } else if (ruleKey === "color" && ruleValue === color) {
+      ++count;
+    } else if (ruleKey === "name" && ruleValue === name) {
+      ++count;
+    }
+    return count;
+  }, 0);
+}
+
+class _OrderedStream {
+  n: number;
+  chunks: Record<string, string>;
+
+  count: number;
+  constructor(n: number) {
+    this.n = n;
+    this.chunks = {};
+
+    this.count = 1;
+  }
+  insert(idKey: number, value: string): string[] {
+    const result = [];
+    this.chunks[idKey] = value;
+    while (this.chunks[this.count] && this.count <= this.n) {
+      result.push(this.chunks[this.count]);
+      ++this.count;
+    }
+    return result;
+  }
+}

@@ -14,3 +14,18 @@ Deno.test("create target array in the given order", () => {
     array.createTargetArray([0, 1, 2, 3, 4], [0, 1, 2, 2, 1])
   );
 });
+
+Deno.test("count items matching a rule", () => {
+  assertEquals(
+    2,
+    array.countMatches(
+      [
+        ["phone", "blue", "pixel"],
+        ["computer", "silver", "phone"],
+        ["phone", "gold", "iphone"],
+      ],
+      "type",
+      "phone"
+    )
+  );
+});
