@@ -103,3 +103,10 @@ export function minMovesToSeat(seats: number[], students: number[]): number {
     return (moves += Math.abs(sortedSeats[index] - sortedStudents[index]));
   }, 0);
 }
+
+export function arrayStringsAreEqual(
+  word1: string[],
+  word2: string[]
+): boolean {
+  return word1.join("") === word2.join("");
+}

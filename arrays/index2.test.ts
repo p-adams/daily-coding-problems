@@ -41,3 +41,7 @@ Deno.test("count number pairs with absolute difference K", () => {
 Deno.test("minimum number of moves to seat everyone", () => {
   assertEquals(4, array.minMovesToSeat([3, 1, 5], [2, 7, 4]));
 });
+
+Deno.test("check if two string arrays are equivalent", () => {
+  assertEquals(true, array.arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
+});
