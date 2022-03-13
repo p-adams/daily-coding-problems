@@ -33,3 +33,7 @@ Deno.test("count items matching a rule", () => {
 Deno.test("sum of all odd length subarrays", () => {
   assertEquals(58, array.sumOddLengthSubarrays([1, 4, 2, 5, 3]));
 });
+
+Deno.test("count number pairs with absolute difference K", () => {
+  assertEquals(4, array.countKDifference([1, 2, 2, 1], 1));
+});
