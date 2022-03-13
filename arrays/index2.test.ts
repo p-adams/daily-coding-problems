@@ -29,3 +29,7 @@ Deno.test("count items matching a rule", () => {
     )
   );
 });
+
+Deno.test("sum of all odd length subarrays", () => {
+  assertEquals(58, array.sumOddLengthSubarrays([1, 4, 2, 5, 3]));
+});

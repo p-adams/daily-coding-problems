@@ -55,3 +55,21 @@ class _OrderedStream {
     return result;
   }
 }
+
+export function sumOddLengthSubarrays(arr: number[]): number {
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; ++i) {
+    let len = 0;
+    let tSum = 0;
+
+    for (let j = i; j < arr.length; ++j) {
+      tSum += arr[j];
+      ++len;
+      if (len % 2 !== 0) {
+        sum += tSum;
+      }
+    }
+  }
+  return sum;
+}
