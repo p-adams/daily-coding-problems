@@ -97,5 +97,9 @@ export function countKDifference(nums: number[], k: number): number {
 }
 
 export function minMovesToSeat(seats: number[], students: number[]): number {
-  return -1;
+  const sortedSeats = [...seats].sort((a, b) => a - b);
+  const sortedStudents = [...students].sort((a, b) => a - b);
+  return sortedSeats.reduce((moves, _, index) => {
+    return (moves += Math.abs(sortedSeats[index] - sortedStudents[index]));
+  }, 0);
 }
