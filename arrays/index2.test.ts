@@ -45,3 +45,23 @@ Deno.test("minimum number of moves to seat everyone", () => {
 Deno.test("check if two string arrays are equivalent", () => {
   assertEquals(true, array.arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
 });
+
+Deno.test("count the number of consistent strings", () => {
+  assertEquals(
+    2,
+    array.countConsistentStrings("ab", ["ad", "bd", "aaab", "baa", "badab"])
+  );
+
+  assertEquals(
+    7,
+    array.countConsistentStrings("abc", [
+      "a",
+      "b",
+      "c",
+      "ab",
+      "ac",
+      "bc",
+      "abc",
+    ])
+  );
+});

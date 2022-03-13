@@ -110,3 +110,10 @@ export function arrayStringsAreEqual(
 ): boolean {
   return word1.join("") === word2.join("");
 }
+
+export function countConsistentStrings(
+  allowed: string,
+  words: string[]
+): number {
+  return 0;
+}
