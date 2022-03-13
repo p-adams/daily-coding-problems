@@ -95,3 +95,7 @@ export function countKDifference(nums: number[], k: number): number {
 
   return sum;
 }
+
+export function minMovesToSeat(seats: number[], students: number[]): number {
+  return -1;
+}

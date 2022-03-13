@@ -37,3 +37,7 @@ Deno.test("sum of all odd length subarrays", () => {
 Deno.test("count number pairs with absolute difference K", () => {
   assertEquals(4, array.countKDifference([1, 2, 2, 1], 1));
 });
+
+Deno.test("minimum number of moves to seat everyone", () => {
+  assertEquals(4, array.minMovesToSeat([3, 1, 5], [2, 7, 4]));
+});
