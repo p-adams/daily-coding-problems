@@ -76,11 +76,20 @@ export function sumOddLengthSubarrays(arr: number[]): number {
 
 export function countKDifference(nums: number[], k: number): number {
   let sum = 0;
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (Math.abs(nums[i] - nums[j]) === k) {
-        ++sum;
-      }
+  const mp = new Map();
+  for (const num of nums) {
+    if (mp.has(num)) {
+      const v = mp.get(num);
+      mp.set(num, v + 1);
+    } else {
+      mp.set(num, 1);
+    }
+  }
+
+  for (const num of nums) {
+    const diff = num - k;
+    if (mp.has(diff)) {
+      sum += mp.get(diff);
     }
   }
 
