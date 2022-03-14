@@ -115,5 +115,13 @@ export function countConsistentStrings(
   allowed: string,
   words: string[]
 ): number {
-  return 0;
+  let count = 0;
+  for (const word of words) {
+    const containsString = word.split("").every((ch) => allowed.includes(ch));
+    if (containsString) {
+      ++count;
+    }
+  }
+
+  return count;
 }
