@@ -65,3 +65,8 @@ Deno.test("count the number of consistent strings", () => {
     ])
   );
 });
+
+Deno.test("maximum product difference between two pairs", () => {
+  assertEquals(34, array.maxProductDifference([5, 6, 2, 7, 4]));
+  assertEquals(64, array.maxProductDifference([4, 2, 5, 9, 7, 4, 8]));
+});

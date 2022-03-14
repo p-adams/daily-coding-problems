@@ -121,3 +121,11 @@ export function countConsistentStrings(
     0
   );
 }
+
+export function maxProductDifference(nums: number[]): number {
+  const sortedNums = [...nums].sort((a, b) => a - b);
+  return (
+    sortedNums[nums.length - 1] * sortedNums[nums.length - 2] -
+    sortedNums[0] * sortedNums[1]
+  );
+}
