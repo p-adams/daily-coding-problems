@@ -129,3 +129,12 @@ export function maxProductDifference(nums: number[]): number {
     sortedNums[0] * sortedNums[1]
   );
 }
+
+export function countGoodTriplets(
+  arr: number[],
+  a: number,
+  b: number,
+  c: number
+): number {
+  return -1;
+}

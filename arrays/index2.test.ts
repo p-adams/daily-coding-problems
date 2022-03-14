@@ -70,3 +70,7 @@ Deno.test("maximum product difference between two pairs", () => {
   assertEquals(34, array.maxProductDifference([5, 6, 2, 7, 4]));
   assertEquals(64, array.maxProductDifference([4, 2, 5, 9, 7, 4, 8]));
 });
+
+Deno.test("count good triplets", () => {
+  assertEquals(4, array.countGoodTriplets([3, 0, 1, 1, 9, 7], 7, 2, 3));
+});
