@@ -152,3 +152,7 @@ export function countGoodTriplets(
   }
   return count;
 }
+
+export function targetIndices(nums: number[], target: number): number[] {
+  return nums;
+}
