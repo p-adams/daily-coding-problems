@@ -163,3 +163,16 @@ export function targetIndices(nums: number[], target: number): number[] {
       []
     );
 }
+
+function isPalindrome(s: string): boolean {
+  for (let i = 0, j = s.length - 1; i < s.length && j >= 0; ++i, --j) {
+    if (s[i] !== s[j]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+export function firstPalindrome(words: string[]): string {
+  return words.find((word) => isPalindrome(word)) ?? "";
+}

@@ -81,3 +81,9 @@ Deno.test("find target indices after sorting array", () => {
 
   assertEquals([4], array.targetIndices([1, 2, 5, 2, 3], 5));
 });
+
+Deno.test("find first palindromic string in array", () => {
+  assertEquals("ada", array.firstPalindrome(["abc", "ada", "racecar", "cool"]));
+  assertEquals("racecar", array.firstPalindrome(["racecar", "cool"]));
+  assertEquals("", array.firstPalindrome(["abbr", "cbb"]));
+});
