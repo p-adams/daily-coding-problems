@@ -154,5 +154,12 @@ export function countGoodTriplets(
 }
 
 export function targetIndices(nums: number[], target: number): number[] {
-  return nums;
+  return [...nums]
+    .sort((a, b) => a - b)
+    .reduce(
+      (result: number[], el: number, idx: number) =>
+        el === target ? [...result, idx] : result,
+
+      []
+    );
 }

@@ -77,4 +77,7 @@ Deno.test("count good triplets", () => {
 
 Deno.test("find target indices after sorting array", () => {
   assertEquals([1, 2], array.targetIndices([1, 2, 5, 2, 3], 2));
+  assertEquals([3], array.targetIndices([1, 2, 5, 2, 3], 3));
+
+  assertEquals([4], array.targetIndices([1, 2, 5, 2, 3], 5));
 });
