@@ -87,3 +87,8 @@ Deno.test("find first palindromic string in array", () => {
   assertEquals("racecar", array.firstPalindrome(["racecar", "cool"]));
   assertEquals("", array.firstPalindrome(["abbr", "cbb"]));
 });
+
+Deno.test("count equal and divisible pairs in an array", () => {
+  assertEquals(4, array.countPairs([3, 1, 2, 2, 2, 1, 3], 2));
+  assertEquals(0, array.countPairs([1, 2, 3, 4], 1));
+});

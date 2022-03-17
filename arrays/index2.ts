@@ -176,3 +176,17 @@ function isPalindrome(s: string): boolean {
 export function firstPalindrome(words: string[]): string {
   return words.find((word) => isPalindrome(word)) ?? "";
 }
+
+export function countPairs(nums: number[], k: number): number {
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    const curr = nums[i];
+    for (let j = i + 1; j < nums.length; j++) {
+      const next = nums[j];
+      if (curr === next && (i * j) % k === 0) {
+        ++count;
+      }
+    }
+  }
+  return count;
+}
