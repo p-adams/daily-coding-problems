@@ -190,3 +190,46 @@ export function countPairs(nums: number[], k: number): number {
   }
   return count;
 }
+
+export function uniqueMorseRepresentations(words: string[]): number {
+  const ABT = [
+    ".-",
+    "-...",
+    "-.-.",
+    "-..",
+    ".",
+    "..-.",
+    "--.",
+    "....",
+    "..",
+    ".---",
+    "-.-",
+    ".-..",
+    "--",
+    "-.",
+    "---",
+    ".--.",
+    "--.-",
+    ".-.",
+    "...",
+    "-",
+    "..-",
+    "...-",
+    ".--",
+    "-..-",
+    "-.--",
+    "--..",
+  ];
+  let str;
+  const result = new Set<string>();
+  for (const word of words) {
+    str = "";
+    for (let index = 0; index < word.length; index++) {
+      const n = word.charCodeAt(index) - 97;
+      str += ABT[n];
+    }
+    result.add(str);
+  }
+
+  return result.size;
+}

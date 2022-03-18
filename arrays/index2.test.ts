@@ -92,3 +92,10 @@ Deno.test("count equal and divisible pairs in an array", () => {
   assertEquals(4, array.countPairs([3, 1, 2, 2, 2, 1, 3], 2));
   assertEquals(0, array.countPairs([1, 2, 3, 4], 1));
 });
+
+Deno.test("unique morse code word", () => {
+  assertEquals(
+    2,
+    array.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
+  );
+});
