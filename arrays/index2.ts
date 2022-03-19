@@ -235,5 +235,9 @@ export function uniqueMorseRepresentations(words: string[]): number {
 }
 
 export function flipAndInvertimage(image: number[][]): number[][] {
-  return image.map((el) => el.reverse().map((v) => (v === 1 ? 0 : 1)));
+  for (let i = 0; i < image.length; ++i) {
+    image[i] = [...image[i]].reverse();
+  }
+
+  return image.map((el) => el.map((v) => (v === 1 ? 0 : 1)));
 }
