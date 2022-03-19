@@ -1,4 +1,7 @@
-import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
+import {
+  assertEquals,
+  equal,
+} from "https://deno.land/std@0.106.0/testing/asserts.ts";
 import * as array from "./index2.ts";
 
 Deno.test("shuffle string", () => {
@@ -97,5 +100,22 @@ Deno.test("unique morse code word", () => {
   assertEquals(
     2,
     array.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
+  );
+});
+
+Deno.test("flip an image", () => {
+  equal(
+    [
+      [
+        [1, 1, 0],
+        [1, 0, 1],
+        [0, 0, 0],
+      ],
+    ],
+    array.flipAndInvertimage([
+      [1, 1, 0],
+      [1, 0, 1],
+      [0, 0, 0],
+    ])
   );
 });
