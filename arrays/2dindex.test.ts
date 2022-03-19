@@ -31,3 +31,14 @@ Deno.test("minimum time visiting all points", () => {
     ])
   );
 });
+
+Deno.test("matrix diagonal sum", () => {
+  assertEquals(
+    25,
+    md.diagonalSum([
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+    ])
+  );
+});
