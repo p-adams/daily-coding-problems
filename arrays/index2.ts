@@ -233,3 +233,15 @@ export function uniqueMorseRepresentations(words: string[]): number {
 
   return result.size;
 }
+
+export function largestAltitude(gain: number[]): number {
+  let maxAlt = 0;
+  let largest = 0;
+  const alt = [];
+  for (let i = 0; i < gain.length; ++i) {
+    maxAlt += gain[i];
+    largest = Math.max(largest, maxAlt);
+    alt.push(maxAlt);
+  }
+  return largest;
+}

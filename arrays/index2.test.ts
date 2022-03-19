@@ -1,7 +1,4 @@
-import {
-  assertEquals,
-  equal,
-} from "https://deno.land/std@0.106.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
 import * as array from "./index2.ts";
 
 Deno.test("shuffle string", () => {
@@ -101,4 +98,8 @@ Deno.test("unique morse code word", () => {
     2,
     array.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
   );
+});
+
+Deno.test("find the highest altitude", () => {
+  assertEquals(1, array.largestAltitude([-5, 1, 5, 0, -7]));
 });
