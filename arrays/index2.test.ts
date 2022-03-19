@@ -119,3 +119,14 @@ Deno.test("flip an image", () => {
     ])
   );
 });
+
+Deno.test("minimum time visiting all points", () => {
+  assertEquals(
+    7,
+    array.minTimeToVisitAllPoints([
+      [1, 1],
+      [3, 4],
+      [-1, 0],
+    ])
+  );
+});
