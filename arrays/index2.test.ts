@@ -102,31 +102,3 @@ Deno.test("unique morse code word", () => {
     array.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
   );
 });
-
-Deno.test("flip an image", () => {
-  equal(
-    [
-      [
-        [1, 1, 0],
-        [1, 0, 1],
-        [0, 0, 0],
-      ],
-    ],
-    array.flipAndInvertimage([
-      [1, 1, 0],
-      [1, 0, 1],
-      [0, 0, 0],
-    ])
-  );
-});
-
-Deno.test("minimum time visiting all points", () => {
-  assertEquals(
-    7,
-    array.minTimeToVisitAllPoints([
-      [1, 1],
-      [3, 4],
-      [-1, 0],
-    ])
-  );
-});
