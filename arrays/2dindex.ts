@@ -31,5 +31,14 @@ export function diagonalSum(mat: number[][]): number {
 }
 
 export function countGoodRectangles(rectangles: number[][]): number {
-  return -1;
+  const minValues = rectangles.map(([l, w]) => {
+    return Math.min(l, w);
+  });
+
+  const maxLen = Math.max(...minValues);
+
+  return minValues.reduce(
+    (sum, value) => (value === maxLen ? sum + 1 : sum),
+    0
+  );
 }
