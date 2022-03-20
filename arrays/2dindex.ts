@@ -29,3 +29,7 @@ export function diagonalSum(mat: number[][]): number {
   }
   return sum;
 }
+
+export function countGoodRectangles(rectangles: number[][]): number {
+  return -1;
+}

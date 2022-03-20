@@ -42,3 +42,15 @@ Deno.test("matrix diagonal sum", () => {
     ])
   );
 });
+
+Deno.test("number of rectangles that can form the largest square", () => {
+  assertEquals(
+    3,
+    md.countGoodRectangles([
+      [5, 8],
+      [3, 9],
+      [5, 12],
+      [16, 5],
+    ])
+  );
+});
