@@ -54,3 +54,13 @@ Deno.test("number of rectangles that can form the largest square", () => {
     ])
   );
 });
+
+Deno.test("cells with odd values in a matrix", () => {
+  assertEquals(
+    6,
+    md.oddCells(2, 3, [
+      [0, 1],
+      [1, 1],
+    ])
+  );
+});

@@ -42,3 +42,7 @@ export function countGoodRectangles(rectangles: number[][]): number {
     0
   );
 }
+
+export function oddCells(m: number, n: number, indices: number[][]): number {
+  return -1;
+}
