@@ -7,3 +7,22 @@
     a callback function (that takes a DOM element as its argument)
  * 
  */
+
+function visit(node, fn) {
+  fn(node);
+  if (node.firstChild) {
+    visit(node.firstChild, fn);
+  }
+  if (node.nextSibling) {
+    visit(node.nextSibling, fn);
+  }
+}
+
+function _main() {
+  const app = document.querySelector("#app");
+  if (app) {
+    visit(app, (node) => {
+      console.log("visited: ", node);
+    });
+  }
+}
