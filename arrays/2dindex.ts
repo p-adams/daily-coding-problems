@@ -44,5 +44,15 @@ export function countGoodRectangles(rectangles: number[][]): number {
 }
 
 export function oddCells(m: number, n: number, indices: number[][]): number {
-  return -1;
+  const rows = Array(m).fill(0);
+  const cols = Array(n).fill(0);
+  for (const [x, y] of indices) {
+    rows[x]++;
+    cols[y]++;
+  }
+  const isOdd = (n: number) => n % 2 !== 0;
+  const oddCols = cols.filter((c) => isOdd(c)).length;
+  const oddRows = rows.filter((r) => isOdd(r)).length;
+
+  return oddRows * n + oddCols * m - 2 * oddRows * oddCols;
 }
