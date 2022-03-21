@@ -1,5 +1,7 @@
+import ButtonListApp from "./buttonList.js";
 import "../style.css";
 
+window.onload = ButtonListApp();
 function visit(node, fn) {
   fn(node);
   if (node.firstChild) {
