@@ -103,3 +103,7 @@ Deno.test("unique morse code word", () => {
 Deno.test("find the highest altitude", () => {
   assertEquals(1, array.largestAltitude([-5, 1, 5, 0, -7]));
 });
+
+Deno.test("sum of all subset XOR Totals", () => {
+  assertEquals(6, array.subsetXORSum([1, 3]));
+});

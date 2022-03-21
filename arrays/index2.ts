@@ -245,3 +245,12 @@ export function largestAltitude(gain: number[]): number {
   }
   return largest;
 }
+
+export function subsetXORSum(nums: number[]): number {
+  const len = nums.length;
+  let bits = 0;
+  for (let index = 0; index < nums.length; index++) {
+    bits |= nums[index];
+  }
+  return bits * Math.pow(2, len - 1);
+}
