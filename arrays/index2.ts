@@ -264,3 +264,7 @@ export function maxProduct(nums: number[]): number {
   }
   return max;
 }
+
+export function minOperations(nums: number[]): number {
+  return -1;
+}
