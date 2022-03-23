@@ -116,4 +116,6 @@ Deno.test("maximum product of two elements in an array", () => {
 
 Deno.test("minimum operations to make the array increasing", () => {
   assertEquals(3, array.minOperations([1, 1, 1]));
+  assertEquals(14, array.minOperations([1, 5, 2, 4, 1]));
+  assertEquals(0, array.minOperations([8]));
 });

@@ -266,5 +266,13 @@ export function maxProduct(nums: number[]): number {
 }
 
 export function minOperations(nums: number[]): number {
-  return -1;
+  let count = 0;
+  for (let index = 1; index < nums.length; index++) {
+    const diff = nums[index - 1] - nums[index] + 1;
+    if (diff > 0) {
+      count += diff;
+      nums[index] += diff;
+    }
+  }
+  return count;
 }
