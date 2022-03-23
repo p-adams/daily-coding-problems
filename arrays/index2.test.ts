@@ -110,6 +110,6 @@ Deno.test("sum of all subset XOR Totals", () => {
 
 Deno.test("maximum product of two elements in an array", () => {
   assertEquals(12, array.maxProduct([3, 4, 5, 2]));
-  //assertEquals(16, array.maxProduct([1, 5, 4, 5]));
-  //assertEquals(12, array.maxProduct([3, 7]));
+  assertEquals(16, array.maxProduct([1, 5, 4, 5]));
+  assertEquals(12, array.maxProduct([3, 7]));
 });
