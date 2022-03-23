@@ -254,3 +254,7 @@ export function subsetXORSum(nums: number[]): number {
   }
   return bits * Math.pow(2, len - 1);
 }
+
+export function maxProduct(nums: number[]): number {
+  return -1;
+}
