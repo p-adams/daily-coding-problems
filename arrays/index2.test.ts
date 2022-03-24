@@ -119,3 +119,9 @@ Deno.test("minimum operations to make the array increasing", () => {
   assertEquals(14, array.minOperations([1, 5, 2, 4, 1]));
   assertEquals(0, array.minOperations([8]));
 });
+
+Deno.test("find greatest common divisor of array", () => {
+  assertEquals(2, array.findGCD([2, 5, 6, 9, 10]));
+  assertEquals(1, array.findGCD([7, 5, 6, 8, 3]));
+  assertEquals(3, array.findGCD([3, 3]));
+});

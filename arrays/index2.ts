@@ -276,3 +276,19 @@ export function minOperations(nums: number[]): number {
   }
   return count;
 }
+
+export function findGCD(nums: number[]): number {
+  const min = Math.min(...nums);
+  const max = Math.max(...nums);
+  let result = 0;
+  for (let i = 1; i <= min; i++) {
+    if (min % i === 0 && max % i === 0) {
+      result = Math.max(result, i);
+    }
+  }
+  return result;
+}
+/** recursive solution
+ * const gcd = (x: number, y: number): number => (y === 0 ? x : gcd(y, x % y));
+  return gcd(Math.min(...nums), Math.max(...nums));
+ */
