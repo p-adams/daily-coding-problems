@@ -132,3 +132,7 @@ Deno.test("counting words with a given prefix", () => {
     array.prefixCount(["pay", "attention", "practice", "attend"], "at")
   );
 });
+
+Deno.test("divide array into equal pairs", () => {
+  assertEquals(true, array.divideArray([3, 2, 3, 2, 2, 2]));
+});

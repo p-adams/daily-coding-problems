@@ -300,3 +300,15 @@ export function prefixCount(words: string[], pref: string): number {
     0
   );
 }
+
+export function divideArray(nums: number[]): boolean {
+  const numSet = new Set<number>();
+  for (const n of nums) {
+    if (numSet.has(n)) {
+      numSet.delete(n);
+    } else {
+      numSet.add(n);
+    }
+  }
+  return numSet.size === 0;
+}
