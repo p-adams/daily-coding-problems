@@ -125,3 +125,10 @@ Deno.test("find greatest common divisor of array", () => {
   assertEquals(1, array.findGCD([7, 5, 6, 8, 3]));
   assertEquals(3, array.findGCD([3, 3]));
 });
+
+Deno.test("counting words with a given prefix", () => {
+  assertEquals(
+    2,
+    array.prefixCount(["pay", "attention", "practice", "attend"], "at")
+  );
+});

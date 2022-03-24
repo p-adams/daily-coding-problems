@@ -292,3 +292,11 @@ export function findGCD(nums: number[]): number {
  * const gcd = (x: number, y: number): number => (y === 0 ? x : gcd(y, x % y));
   return gcd(Math.min(...nums), Math.max(...nums));
  */
+
+export function prefixCount(words: string[], pref: string): number {
+  return words.reduce(
+    (count: number, word: string) =>
+      word.startsWith(pref) ? count + 1 : count,
+    0
+  );
+}
