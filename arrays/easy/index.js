@@ -4,3 +4,7 @@ export function findNumbers(nums) {
     0
   );
 }
+
+export function sumZero(n) {
+  return [];
+}
