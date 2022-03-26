@@ -6,5 +6,5 @@ Deno.test("find numbers with even number of digits", () => {
 });
 
 Deno.test("find n unique integers that sum up to 0", () => {
-  assertEquals([-7, -1, 1, 3, 4, array.sumZero(5)]);
+  assertEquals([-7, -1, 1, 3, 4], array.sumZero(5));
 });

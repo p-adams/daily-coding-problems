@@ -6,5 +6,12 @@ export function findNumbers(nums) {
 }
 
 export function sumZero(n) {
-  return [];
+  const r = [];
+  if (n % 2 !== 1) {
+    r.push(0);
+  }
+  for (let index = 1; index <= Math.floor(n / 2); index++) {
+    r.push(index, -index);
+  }
+  return r;
 }
