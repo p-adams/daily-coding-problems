@@ -7,7 +7,7 @@ export function findNumbers(nums) {
 
 export function sumZero(n) {
   const r = [];
-  if (n % 2 !== 1) {
+  if (n % 2 !== 0) {
     r.push(0);
   }
   for (let index = 1; index <= Math.floor(n / 2); index++) {
