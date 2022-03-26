@@ -8,3 +8,12 @@ Deno.test("find numbers with even number of digits", () => {
 Deno.test("find n unique integers that sum up to 0", () => {
   assertEquals([0, 1, -1, 2, -2], array.sumZero(5));
 });
+
+Deno.test("number of workers doing work at a given time", () => {
+  assertEquals(1, array.busyWorker([1, 2, 3], [3, 2, 7], 4));
+  assertEquals(1, array.busyWorker([4], [4], 4));
+});
+
+Deno.test("DI String Match", () => {
+  assertEquals([0, 4, 1, 3, 2], array.diStringMatch("IDID"));
+});

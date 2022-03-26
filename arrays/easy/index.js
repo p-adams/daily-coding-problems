@@ -15,3 +15,33 @@ export function sumZero(n) {
   }
   return r;
 }
+
+/**
+ *
+ * @param {number[]} startTime
+ * @param {number[]} endTime
+ * @param {number} queryTime
+ * @returns number
+ */
+
+export function busyWorker(startTime, endTime, queryTime) {
+  return endTime.reduce(
+    (count, ev, idx) =>
+      ev >= queryTime && startTime[idx] <= queryTime ? ++count : count,
+    0
+  );
+}
+
+export function diStringMatch(s) {
+  const sl = s.length;
+  const perm = [];
+  let left = 0;
+  let right = sl;
+  for (const ch of s) {
+    perm.push(ch === "I" ? left++ : right--);
+  }
+
+  perm.push(s[sl - 1] === "I" ? right : left);
+
+  return perm;
+}
