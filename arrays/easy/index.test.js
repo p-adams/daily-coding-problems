@@ -17,3 +17,11 @@ Deno.test("number of workers doing work at a given time", () => {
 Deno.test("DI String Match", () => {
   assertEquals([0, 4, 1, 3, 2], array.diStringMatch("IDID"));
 });
+
+Deno.test("array partition 1", () => {
+  assertEquals(4, array.arrayPairSum([1, 4, 3, 2]));
+});
+
+Deno.test("sum of unique elements", () => {
+  assertEquals(4, array.sumOfUnique([1, 2, 3, 2]));
+});

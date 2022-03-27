@@ -45,3 +45,30 @@ export function diStringMatch(s) {
 
   return perm;
 }
+
+export function arrayPairSum(nums) {
+  nums.sort((a, b) => a - b);
+  let sum = 0;
+  for (let i = 0; i < nums.length; i = i + 2) {
+    sum += nums[i];
+  }
+
+  return sum;
+}
+
+export function sumOfUnique(nums) {
+  const mm = new Map();
+  for (const v of nums) {
+    if (mm.has(v)) {
+      const vv = mm.get(v);
+      mm.set(v, vv + 1);
+    } else {
+      mm.set(v, 1);
+    }
+  }
+
+  return [...mm]
+    .filter((el) => el[1] === 1)
+    .map((el) => el[0])
+    .reduce((p, c) => p + c, 0);
+}
