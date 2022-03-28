@@ -72,3 +72,21 @@ export function sumOfUnique(nums) {
     .map((el) => el[0])
     .reduce((p, c) => p + c, 0);
 }
+
+export function repeatedNTimes(nums) {
+  const m = new Map();
+  for (const n of nums) {
+    if (m.has(n)) {
+      const v = m.get(n);
+      m.set(n, v + 1);
+    } else {
+      m.set(n, 1);
+    }
+  }
+  for (const [k, _] of m) {
+    if (m.get(k) === nums.length / 2) {
+      return k;
+    }
+  }
+  return -1;
+}

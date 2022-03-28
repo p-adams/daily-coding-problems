@@ -25,3 +25,7 @@ Deno.test("array partition 1", () => {
 Deno.test("sum of unique elements", () => {
   assertEquals(4, array.sumOfUnique([1, 2, 3, 2]));
 });
+
+Deno.test("n-repeated element in size 2n array", () => {
+  assertEquals(3, array.repeatedNTimes([1, 2, 3, 3]));
+});
