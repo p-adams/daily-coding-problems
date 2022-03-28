@@ -29,3 +29,7 @@ Deno.test("sum of unique elements", () => {
 Deno.test("n-repeated element in size 2n array", () => {
   assertEquals(3, array.repeatedNTimes([1, 2, 3, 3]));
 });
+
+Deno.test("final prices with a special discount in a shop", () => {
+  assertEquals([], array.finalPrices([8, 4, 6, 2, 3]));
+});

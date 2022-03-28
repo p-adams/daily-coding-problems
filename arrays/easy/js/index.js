@@ -90,3 +90,7 @@ export function repeatedNTimes(nums) {
   }
   return -1;
 }
+
+export function finalPrices(prices) {
+  return prices;
+}
