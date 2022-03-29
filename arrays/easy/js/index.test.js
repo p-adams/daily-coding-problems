@@ -1,4 +1,7 @@
-import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
+import {
+  assertEquals,
+  equal,
+} from "https://deno.land/std@0.106.0/testing/asserts.ts";
 import * as array from "./index.js";
 
 Deno.test("find numbers with even number of digits", () => {
@@ -31,5 +34,5 @@ Deno.test("n-repeated element in size 2n array", () => {
 });
 
 Deno.test("final prices with a special discount in a shop", () => {
-  assertEquals([], array.finalPrices([8, 4, 6, 2, 3]));
+  equal([[4, 2, 4, 2, 3]], array.finalPrices([8, 4, 6, 2, 3]));
 });
