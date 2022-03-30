@@ -102,3 +102,10 @@ export function finalPrices(prices) {
   }
   return prices;
 }
+
+export function sortArrayByParity(nums) {
+  return [
+    ...nums.filter((n) => n % 2 === 0),
+    ...nums.filter((n) => n % 2 !== 0),
+  ];
+}

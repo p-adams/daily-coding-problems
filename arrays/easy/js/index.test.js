@@ -34,5 +34,9 @@ Deno.test("n-repeated element in size 2n array", () => {
 });
 
 Deno.test("final prices with a special discount in a shop", () => {
-  equal([[4, 2, 4, 2, 3]], array.finalPrices([8, 4, 6, 2, 3]));
+  equal([4, 2, 4, 2, 3], array.finalPrices([8, 4, 6, 2, 3]));
+});
+
+Deno.test("Sort Array By Parity", () => {
+  assertEquals([2, 4, 3, 1], array.sortArrayByParity([3, 1, 2, 4]));
 });
