@@ -109,3 +109,13 @@ export function sortArrayByParity(nums) {
     ...nums.filter((n) => n % 2 !== 0),
   ];
 }
+
+export function replaceElements(arr) {
+  let max = -1;
+  for (let i = arr.length - 1; i >= 0; --i) {
+    const t = max;
+    max = Math.max(max, arr[i]);
+    arr[i] = t;
+  }
+  return arr;
+}

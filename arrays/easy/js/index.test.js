@@ -40,3 +40,10 @@ Deno.test("final prices with a special discount in a shop", () => {
 Deno.test("Sort Array By Parity", () => {
   assertEquals([2, 4, 3, 1], array.sortArrayByParity([3, 1, 2, 4]));
 });
+
+Deno.test("replace elements with greatest element on right side", () => {
+  assertEquals(
+    [18, 6, 6, 6, 1, -1],
+    array.replaceElements([17, 18, 5, 4, 6, 1])
+  );
+});
