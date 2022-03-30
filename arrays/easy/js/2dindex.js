@@ -9,3 +9,7 @@ export function countNegatives(grid) {
   }
   return c;
 }
+
+export function kWeakestRows(mat, k) {
+  return [];
+}

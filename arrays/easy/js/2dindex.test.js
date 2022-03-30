@@ -11,3 +11,19 @@ Deno.test("count negative numbers in a sorted matrix", () => {
     ])
   );
 });
+
+Deno.test("the k weakest rows in a matrix", () => {
+  assertEquals(
+    [2, 0, 3],
+    _2darray.kWeakestRows(
+      [
+        [1, 1, 0, 0, 0],
+        [1, 1, 1, 1, 0],
+        [1, 0, 0, 0, 0],
+        [1, 1, 0, 0, 0],
+        [1, 1, 1, 1, 1],
+      ],
+      3
+    )
+  );
+});
