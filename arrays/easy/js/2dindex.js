@@ -11,5 +11,14 @@ export function countNegatives(grid) {
 }
 
 export function kWeakestRows(mat, k) {
-  return [];
+  return mat
+    .map((row, index) => {
+      return {
+        count: row.filter(Boolean).length,
+        index,
+      };
+    })
+    .sort((a, b) => a.count - b.count)
+    .map((el) => el.index)
+    .slice(0, k);
 }
