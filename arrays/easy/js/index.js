@@ -121,5 +121,10 @@ export function replaceElements(arr) {
 }
 
 export function heightChecker(heights) {
-  return -1;
+  const expected = [...heights].sort((a, b) => a - b);
+
+  return heights.reduce(
+    (count, height, idx) => (height !== expected[idx] ? ++count : count),
+    0
+  );
 }
