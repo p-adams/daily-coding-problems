@@ -47,3 +47,7 @@ Deno.test("replace elements with greatest element on right side", () => {
     array.replaceElements([17, 18, 5, 4, 6, 1])
   );
 });
+
+Deno.test("height checker", () => {
+  assertEquals(3, array.heightChecker([1, 1, 4, 2, 1, 3]));
+});

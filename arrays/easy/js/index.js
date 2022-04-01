@@ -119,3 +119,7 @@ export function replaceElements(arr) {
   }
   return arr;
 }
+
+export function heightChecker(heights) {
+  return -1;
+}
