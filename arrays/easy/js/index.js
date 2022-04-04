@@ -140,3 +140,13 @@ export function findFinalValue(nums, original) {
 
   return original;
 }
+
+export function smallestEqual(nums) {
+  let smallest = Number.MAX_SAFE_INTEGER;
+  for (const [idx, val] of nums.entries()) {
+    if (idx % 10 === val) {
+      smallest = Math.min(smallest, idx);
+    }
+  }
+  return smallest === Number.MAX_SAFE_INTEGER ? -1 : smallest;
+}

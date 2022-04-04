@@ -55,3 +55,9 @@ Deno.test("height checker", () => {
 Deno.test("keep multiplying found values by two", () => {
   assertEquals(24, array.findFinalValue([5, 3, 6, 1, 12], 3));
 });
+
+Deno.test("smallest index with equal value", () => {
+  assertEquals(0, array.smallestEqual([0, 1, 2]));
+  assertEquals(2, array.smallestEqual([4, 3, 2, 1]));
+  assertEquals(-1, array.smallestEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+});
