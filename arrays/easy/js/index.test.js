@@ -51,3 +51,7 @@ Deno.test("replace elements with greatest element on right side", () => {
 Deno.test("height checker", () => {
   assertEquals(3, array.heightChecker([1, 1, 4, 2, 1, 3]));
 });
+
+Deno.test("keep multiplying found values by two", () => {
+  assertEquals(24, array.findFinalValue([5, 3, 6, 1, 12], 3));
+});

@@ -128,3 +128,15 @@ export function heightChecker(heights) {
     0
   );
 }
+export function findFinalValue(nums, original) {
+  const s = new Set(nums);
+  while (true) {
+    if (s.has(original)) {
+      original *= 2;
+    } else {
+      break;
+    }
+  }
+
+  return original;
+}
