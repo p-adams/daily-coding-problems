@@ -178,5 +178,14 @@ export function twoOutOfThree(nums1, nums2, nums3) {
 }
 
 export function minCostToMoveChips(position) {
-  return -1;
+  const { odd, even } = position.reduce(
+    (nObj, pos) => {
+      return pos % 2 === 0
+        ? { ...nObj, even: ++nObj.even }
+        : { ...nObj, odd: ++nObj.odd };
+    },
+    { odd: 0, even: 0 }
+  );
+
+  return Math.min(odd, even);
 }
