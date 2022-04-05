@@ -61,3 +61,9 @@ Deno.test("smallest index with equal value", () => {
   assertEquals(2, array.smallestEqual([4, 3, 2, 1]));
   assertEquals(-1, array.smallestEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 });
+
+Deno.test("kth distinct string in an array", () => {
+  assertEquals("a", array.kthDistinct(["d", "b", "c", "b", "c", "a"], 2));
+  assertEquals("aaa", array.kthDistinct(["aaa", "aa", "a"], 1));
+  assertEquals("", array.kthDistinct(["a", "b", "a"], 3));
+});

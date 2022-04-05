@@ -150,3 +150,20 @@ export function smallestEqual(nums) {
   }
   return smallest === Number.MAX_SAFE_INTEGER ? -1 : smallest;
 }
+
+export function kthDistinct(arr, k) {
+  const aMap = new Map();
+  for (const v of arr) {
+    if (aMap.has(v)) {
+      aMap.set(v, aMap.get(v) + 1);
+    } else {
+      aMap.set(v, 1);
+    }
+  }
+
+  const res = [...aMap].filter((v) => v[1] === 1);
+  if (res.length >= k) {
+    return res.slice(k - 1)[0][0];
+  }
+  return "";
+}
