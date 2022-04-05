@@ -176,3 +176,7 @@ export function twoOutOfThree(nums1, nums2, nums3) {
     ]),
   ];
 }
+
+export function minCostToMoveChips(position) {
+  return -1;
+}

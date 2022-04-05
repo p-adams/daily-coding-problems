@@ -71,5 +71,9 @@ Deno.test("kth distinct string in an array", () => {
 Deno.test("two out of three", () => {
   assertEquals([], array.twoOutOfThree([], [], []));
   assertEquals([3, 2], array.twoOutOfThree([1, 1, 3, 2], [2, 3], [3]));
-  equal([3, 1, 2], array.twoOutOfThree([3, 1], [2, 3], [1, 2]));
+  assertEquals([3, 1, 2], array.twoOutOfThree([3, 1], [2, 3], [1, 2]));
+});
+
+Deno.test("minimum cost to move chips to same position", () => {
+  assertEquals(1, array.minCostToMoveChips([1, 2, 3]));
 });
