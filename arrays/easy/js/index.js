@@ -167,3 +167,12 @@ export function kthDistinct(arr, k) {
   }
   return "";
 }
+
+export function twoOutOfThree(nums1, nums2, nums3) {
+  return [
+    ...new Set([
+      ...nums1.filter((n) => nums2.includes(n) || nums3.includes(n)),
+      ...nums2.filter((n) => nums3.includes(n) || nums1.includes(n)),
+    ]),
+  ];
+}

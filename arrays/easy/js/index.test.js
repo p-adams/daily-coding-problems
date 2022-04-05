@@ -67,3 +67,9 @@ Deno.test("kth distinct string in an array", () => {
   assertEquals("aaa", array.kthDistinct(["aaa", "aa", "a"], 1));
   assertEquals("", array.kthDistinct(["a", "b", "a"], 3));
 });
+
+Deno.test("two out of three", () => {
+  assertEquals([], array.twoOutOfThree([], [], []));
+  assertEquals([3, 2], array.twoOutOfThree([1, 1, 3, 2], [2, 3], [3]));
+  equal([3, 1, 2], array.twoOutOfThree([3, 1], [2, 3], [1, 2]));
+});
