@@ -189,3 +189,8 @@ export function minCostToMoveChips(position) {
 
   return Math.min(odd, even);
 }
+
+export function canBeEqual(target, arr) {
+  const sArr = [...arr].sort((a, b) => a - b);
+  return [...target].sort((a, b) => a - b).every((v, i) => v === sArr[i]);
+}

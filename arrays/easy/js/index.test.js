@@ -77,3 +77,7 @@ Deno.test("two out of three", () => {
 Deno.test("minimum cost to move chips to same position", () => {
   assertEquals(1, array.minCostToMoveChips([1, 2, 3]));
 });
+
+Deno.test("make two arrays equal by reversing sub-arrays", () => {
+  assertEquals(true, array.canBeEqual([1, 2, 3, 4], [2, 4, 1, 3]));
+});
