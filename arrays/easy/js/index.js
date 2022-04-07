@@ -194,3 +194,18 @@ export function canBeEqual(target, arr) {
   const sArr = [...arr].sort((a, b) => a - b);
   return [...target].sort((a, b) => a - b).every((v, i) => v === sArr[i]);
 }
+
+export function minSubsequence(nums) {
+  if (nums.length === 1) return nums;
+
+  nums.sort((a, b) => b - a);
+  const sum = nums.reduce((acc, cur) => acc + cur);
+
+  let runningSum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    runningSum += nums[i];
+    if (runningSum > sum - runningSum) {
+      return nums.slice(0, i + 1);
+    }
+  }
+}

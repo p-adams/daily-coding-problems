@@ -81,3 +81,7 @@ Deno.test("minimum cost to move chips to same position", () => {
 Deno.test("make two arrays equal by reversing sub-arrays", () => {
   assertEquals(true, array.canBeEqual([1, 2, 3, 4], [2, 4, 1, 3]));
 });
+
+Deno.test("minimum subsequence in non-increasing order", () => {
+  assertEquals([10, 9], array.minSubsequence([4, 3, 10, 9, 8]));
+});
