@@ -85,3 +85,9 @@ Deno.test("make two arrays equal by reversing sub-arrays", () => {
 Deno.test("minimum subsequence in non-increasing order", () => {
   assertEquals([10, 9], array.minSubsequence([4, 3, 10, 9, 8]));
 });
+
+Deno.test("unique number of occurences", () => {
+  assertEquals(true, array.uniqueOccurrences([1, 2, 2, 1, 1, 3]));
+  assertEquals(false, array.uniqueOccurrences([1, 2]));
+  assertEquals(false, array.uniqueOccurrences([3, 5, -2, -3, -6, -6]));
+});

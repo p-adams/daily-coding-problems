@@ -209,3 +209,15 @@ export function minSubsequence(nums) {
     }
   }
 }
+
+export function uniqueOccurrences(arr) {
+  const occ = [
+    ...arr.reduce(
+      (m, curr) =>
+        m.has(curr) ? m.set(curr, m.get(curr) + 1) : m.set(curr, 1),
+      new Map()
+    ),
+  ].map((m) => m[1]);
+
+  return occ.length === new Set(occ).size;
+}
