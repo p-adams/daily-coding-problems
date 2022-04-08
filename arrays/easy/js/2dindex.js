@@ -24,5 +24,21 @@ export function kWeakestRows(mat, k) {
 }
 
 export function maximumUnits(boxTypes, truckSize) {
-  return -1;
+  boxTypes = boxTypes.sort((a, b) => {
+    return b[1] - a[1];
+  });
+
+  let i = 0;
+  let sum = 0;
+  while (truckSize > 0 && i < boxTypes.length) {
+    if (truckSize >= boxTypes[i][0]) {
+      sum += boxTypes[i][0] * boxTypes[i][1];
+      truckSize -= boxTypes[i][0];
+      i++;
+    } else {
+      sum += truckSize * boxTypes[i][1];
+      truckSize -= boxTypes[i][0];
+    }
+  }
+  return sum;
 }
