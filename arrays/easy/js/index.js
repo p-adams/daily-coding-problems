@@ -225,3 +225,7 @@ export function uniqueOccurrences(arr) {
     ].map((m) => m[1]);
   }
 }
+
+export function sortByBits(arr) {
+  return [];
+}

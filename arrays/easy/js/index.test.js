@@ -91,3 +91,10 @@ Deno.test("unique number of occurences", () => {
   assertEquals(false, array.uniqueOccurrences([1, 2]));
   assertEquals(false, array.uniqueOccurrences([3, 5, -2, -3, -6, -6]));
 });
+
+Deno.test("sort integers by the number of 1 bits", () => {
+  assertEquals(
+    [0, 1, 2, 4, 8, 3, 5, 6, 7],
+    array.sortByBits([0, 1, 2, 3, 4, 5, 6, 7, 8])
+  );
+});
