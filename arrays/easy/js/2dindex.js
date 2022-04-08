@@ -22,3 +22,7 @@ export function kWeakestRows(mat, k) {
     .map((el) => el.index)
     .slice(0, k);
 }
+
+export function maximumUnits(boxTypes, truckSize) {
+  return -1;
+}

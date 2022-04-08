@@ -27,3 +27,7 @@ Deno.test("the k weakest rows in a matrix", () => {
     )
   );
 });
+
+Deno.test("maximum units on a truck", () => {
+  assertEquals(8, _2darray.maximumUnits[([], [], [])], 4);
+});
