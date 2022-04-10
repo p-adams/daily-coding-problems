@@ -98,3 +98,7 @@ Deno.test("sort integers by the number of 1 bits", () => {
     array.sortByBits([0, 1, 2, 3, 4, 5, 6, 7, 8])
   );
 });
+
+Deno.test("build an array with stack operations", () => {
+  assertEquals([""], array.buildArray([1, 3], 3));
+});

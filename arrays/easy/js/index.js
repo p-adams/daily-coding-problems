@@ -227,5 +227,18 @@ export function uniqueOccurrences(arr) {
 }
 
 export function sortByBits(arr) {
-  return [];
+  const numOfBits = function (num) {
+    const bits = num.toString(2).match(/1/g);
+    return bits ? bits.length : 0;
+  };
+  return arr.sort((a, b) => numOfBits(a) - numOfBits(b) || a - b);
+}
+/**
+ *
+ * @param {number[]} target
+ * @param {number} n
+ * @returns string[]
+ */
+export function buildArray(target, n) {
+  return [""];
 }
