@@ -242,3 +242,27 @@ export function sortByBits(arr) {
 export function buildArray(target, n) {
   return [""];
 }
+
+export function calPoints(ops) {
+  const sb = [];
+  for (const op of ops) {
+    switch (op) {
+      case "+":
+        sb.push(Number(sb[sb.length - 1]) + Number(sb[sb.length - 2]));
+        break;
+      case "D":
+        sb.push(Number(sb[sb.length - 1] * 2));
+        break;
+      case "C":
+        sb.pop();
+        break;
+      default:
+        sb.push(Number(op));
+        break;
+    }
+  }
+
+  return sb.reduce((p, c) => p + c);
+}
+
+calPoints(["5", "2", "C", "D", "+"]);
