@@ -105,5 +105,5 @@ Deno.test("baseball game", () => {
 });
 
 Deno.test("build an array with stack operations", () => {
-  // assertEquals([""], array.buildArray([1, 3], 3));
+  assertEquals(["Push", "Push", "Pop", "Push"], array.buildArray([1, 3], 3));
 });

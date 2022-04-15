@@ -240,7 +240,16 @@ export function sortByBits(arr) {
  * @returns string[]
  */
 export function buildArray(target, n) {
-  return [""];
+  const arr = [];
+  let i = 1;
+  while (target[target.length - 1] >= i) {
+    arr.push("Push");
+    if (!target.includes(i)) {
+      arr.push("Pop");
+    }
+    i++;
+  }
+  return arr;
 }
 
 export function calPoints(ops) {
@@ -264,5 +273,3 @@ export function calPoints(ops) {
 
   return sb.reduce((p, c) => p + c);
 }
-
-calPoints(["5", "2", "C", "D", "+"]);
