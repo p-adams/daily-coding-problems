@@ -273,3 +273,7 @@ export function calPoints(ops) {
 
   return sb.reduce((p, c) => p + c);
 }
+
+export function shortestToChar(s, c) {
+  return [];
+}

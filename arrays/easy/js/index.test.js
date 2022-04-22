@@ -107,3 +107,7 @@ Deno.test("baseball game", () => {
 Deno.test("build an array with stack operations", () => {
   assertEquals(["Push", "Push", "Pop", "Push"], array.buildArray([1, 3], 3));
 });
+
+Deno.test("shortest distance to a character", () => {
+  assertEquals([], array.shortestToChar("", ""));
+});
