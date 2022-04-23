@@ -275,5 +275,15 @@ export function calPoints(ops) {
 }
 
 export function shortestToChar(s, c) {
-  return [];
+  const index = [];
+  for (const [ind, char] of s.split("").entries()) {
+    if (char === c) index.push(ind);
+  }
+
+  const arr = [];
+  for (const [ind, char] of s.split("").entries()) {
+    if (char === c) arr.push(0);
+    else arr.push(Math.min(...index.map((x) => Math.abs(ind - x))));
+  }
+  return arr;
 }

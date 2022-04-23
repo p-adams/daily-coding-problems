@@ -109,5 +109,5 @@ Deno.test("build an array with stack operations", () => {
 });
 
 Deno.test("shortest distance to a character", () => {
-  assertEquals([], array.shortestToChar("", ""));
+  assertEquals([3, 2, 1, 0], array.shortestToChar("aaab", "b"));
 });
