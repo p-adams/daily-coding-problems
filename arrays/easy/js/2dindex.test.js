@@ -41,3 +41,7 @@ Deno.test("maximum units on a truck", () => {
     )
   );
 });
+
+Deno.test("lucky numbers in a matrix", () => {
+  assertEquals([], _2darray.luckyNumbers([]));
+});

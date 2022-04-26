@@ -42,3 +42,7 @@ export function maximumUnits(boxTypes, truckSize) {
   }
   return sum;
 }
+
+export function luckyNumbers(matrix) {
+  return [];
+}
