@@ -111,3 +111,7 @@ Deno.test("build an array with stack operations", () => {
 Deno.test("shortest distance to a character", () => {
   assertEquals([3, 2, 1, 0], array.shortestToChar("aaab", "b"));
 });
+
+Deno.test("sort array by parity 2", () => {
+  assertEquals([2, 7, 4, 5], array.sortArrayByParity2([4, 2, 5, 7]));
+});

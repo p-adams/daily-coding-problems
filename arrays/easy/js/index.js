@@ -287,3 +287,17 @@ export function shortestToChar(s, c) {
   }
   return arr;
 }
+
+export function sortArrayByParity2(nums) {
+  const odds = nums.filter((n) => n % 2 !== 0);
+  const evens = nums.filter((n) => n % 2 === 0);
+  const res = [];
+  for (const [i, _] of nums.entries()) {
+    if (i % 2) {
+      res.push(odds.pop());
+    } else {
+      res.push(evens.pop());
+    }
+  }
+  return res;
+}
