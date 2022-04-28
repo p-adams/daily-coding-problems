@@ -115,3 +115,7 @@ Deno.test("shortest distance to a character", () => {
 Deno.test("sort array by parity 2", () => {
   assertEquals([2, 7, 4, 5], array.sortArrayByParity2([4, 2, 5, 7]));
 });
+
+Deno.test("peak index in a mountain array", () => {
+  assertEquals(1, array.peakIndexInMountainArray([0, 1, 0]));
+});
