@@ -319,5 +319,8 @@ export function peakIndexInMountainArray(arr) {
 }
 
 export function countPrefixes(words, s) {
-  return 0;
+  return words.reduce(
+    (count, word) => (s.startsWith(word) ? count + 1 : count),
+    0
+  );
 }
