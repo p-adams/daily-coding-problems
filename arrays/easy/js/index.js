@@ -317,3 +317,7 @@ export function peakIndexInMountainArray(arr) {
     }
   }
 }
+
+export function countPrefixes(words, s) {
+  return 0;
+}

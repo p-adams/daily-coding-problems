@@ -119,3 +119,10 @@ Deno.test("sort array by parity 2", () => {
 Deno.test("peak index in a mountain array", () => {
   assertEquals(1, array.peakIndexInMountainArray([0, 1, 0]));
 });
+
+Deno.test("count prefixes of a given string", () => {
+  assertEquals(
+    3,
+    array.countPrefixes(["a", "b", "c", "ab", "bc", "abc"], "abc")
+  );
+});
