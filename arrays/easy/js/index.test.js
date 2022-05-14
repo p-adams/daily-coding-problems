@@ -126,3 +126,10 @@ Deno.test("count prefixes of a given string", () => {
     array.countPrefixes(["a", "b", "c", "ab", "bc", "abc"], "abc")
   );
 });
+
+Deno.test("count common words with one occurence", () => {
+  assertEquals(
+    3,
+    array.countWords(["foo", "bar", "baz"], ["foo", "bar", "baz"])
+  );
+});

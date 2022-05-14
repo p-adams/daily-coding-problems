@@ -324,3 +324,7 @@ export function countPrefixes(words, s) {
     0
   );
 }
+
+export function countWords(words1, words2) {
+  return 1;
+}
