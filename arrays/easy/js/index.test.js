@@ -132,4 +132,5 @@ Deno.test("count common words with one occurence", () => {
     3,
     array.countWords(["foo", "bar", "baz"], ["foo", "bar", "baz"])
   );
+  assertEquals(1, array.countWords(["a", "ab"], ["a", "a", "a", "ab"]));
 });
