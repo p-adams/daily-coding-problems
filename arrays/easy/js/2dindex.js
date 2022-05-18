@@ -72,3 +72,20 @@ function _projectionArea(grid) {
 
   return x + y + z;
 }
+
+export function minimumAbsDifference(arr) {
+  let min = Number.MAX_VALUE;
+  let result = [];
+  const sArr = [...arr].sort((a, b) => a - b);
+  for (let i = 1; i < sArr.length; i++) {
+    const diff = sArr[i] - sArr[i - 1];
+    if (diff < min) {
+      min = diff;
+      result = [[sArr[i - 1], sArr[i]]];
+      console.log(result);
+    } else if (diff == min) {
+      result.push([sArr[i - 1], sArr[i]]);
+    }
+  }
+  return result;
+}

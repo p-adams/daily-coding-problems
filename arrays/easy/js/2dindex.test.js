@@ -53,3 +53,15 @@ Deno.test("lucky numbers in a matrix", () => {
     ])
   );
 });
+
+Deno.test("minimum absolute difference", () => {
+  // assertEquals([[]], _2darray.minimumAbsDifference([]));
+  assertEquals(
+    [
+      [1, 2],
+      [2, 3],
+      [3, 4],
+    ],
+    _2darray.minimumAbsDifference([4, 2, 1, 3])
+  );
+});
