@@ -326,23 +326,18 @@ export function countPrefixes(words, s) {
 }
 
 export function countWords(words1, words2) {
-  function wordMap(arr) {
-    return arr.reduce((m, w) => {
-      if (m.has(w)) {
-        m.set(w, m.get(w) + 1);
-      } else {
-        m.set(w, 1);
-      }
-      return m;
-    }, new Map());
-  }
-  const m1 = wordMap(words1);
-  const m2 = wordMap(words2);
-  let c = 0;
-  for (const [k, v] of m1.entries()) {
-    if (v === 1 && m2.get(k) === 1) {
-      ++c;
-    }
-  }
-  return c;
+  const wordMap = (arr) =>
+    arr.reduce(
+      (m, w) => (m.has(w) ? m.set(w, m.get(w) + 1) : m.set(w, 1)),
+      new Map()
+    );
+
+  const wordMap1 = wordMap(words1);
+  const wordMap2 = wordMap(words2);
+
+  return Array.from(wordMap1).reduce(
+    (count, [key, value] = entry) =>
+      value === 1 && wordMap2.get(key) === 1 ? count + 1 : count,
+    0
+  );
 }
