@@ -89,3 +89,11 @@ export function minimumAbsDifference(arr) {
   }
   return result;
 }
+/**
+ *
+ * @param {number[][]} nums
+ * @returns number[]
+ */
+export function intersection(nums) {
+  return [];
+}

@@ -65,3 +65,14 @@ Deno.test("minimum absolute difference", () => {
     _2darray.minimumAbsDifference([4, 2, 1, 3])
   );
 });
+
+Deno.test("intersection of multiple arrays", () => {
+  assertEquals(
+    [3, 4],
+    _2darray.intersection([
+      [3, 1, 2, 4, 5],
+      [1, 2, 3, 4],
+      [3, 4, 5, 6],
+    ])
+  );
+});
