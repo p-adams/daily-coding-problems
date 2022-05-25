@@ -75,4 +75,11 @@ Deno.test("intersection of multiple arrays", () => {
       [3, 4, 5, 6],
     ])
   );
+  assertEquals(
+    [],
+    _2darray.intersection([
+      [1, 2, 3],
+      [4, 5, 6],
+    ])
+  );
 });

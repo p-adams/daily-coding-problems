@@ -95,5 +95,21 @@ export function minimumAbsDifference(arr) {
  * @returns number[]
  */
 export function intersection(nums) {
-  return [];
+  return [
+    ...Array.from(iMap(nums))
+      .map((m) => (m[1] === nums.length ? m[0] : null))
+      .filter(Boolean),
+  ].sort((a, b) => a - b);
 }
+
+const iMap = (arr) =>
+  arr.reduce((m, arr) => {
+    for (const el of arr) {
+      if (m.has(el)) {
+        m.set(el, m.get(el) + 1);
+      } else {
+        m.set(el, 1);
+      }
+    }
+    return m;
+  }, new Map());
