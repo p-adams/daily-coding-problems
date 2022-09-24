@@ -85,5 +85,16 @@ Deno.test("intersection of multiple arrays", () => {
 });
 
 Deno.test("Largest Local Values in a Matrix", () => {
-  assertEquals([], _2darray.largestLocal());
+  assertEquals(
+    [
+      [9, 9],
+      [8, 6],
+    ],
+    _2darray.largestLocal([
+      [9, 9, 8, 1],
+      [5, 6, 2, 6],
+      [8, 2, 6, 4],
+      [6, 2, 2, 2],
+    ])
+  );
 });

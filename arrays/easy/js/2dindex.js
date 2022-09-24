@@ -115,5 +115,21 @@ const iMap = (arr) =>
   }, new Map());
 
 export function largestLocal(grid) {
-  return [];
+  const result = Array.from(
+    Array(grid.length - 2),
+    () => new Array(grid.length - 2)
+  );
+  for (let i = 0; i < result.length; i++) {
+    for (let j = 0; j < result.length; j++) {
+      let largest = Number.MIN_VALUE;
+
+      for (let r = i; r < i + 3; r++) {
+        for (let c = j; c < j + 3; c++) {
+          largest = Math.max(largest, grid[r][c]);
+        }
+      }
+      result[i][j] = largest;
+    }
+  }
+  return result;
 }
