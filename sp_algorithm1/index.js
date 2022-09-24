@@ -47,10 +47,20 @@ function searchInsertPosition(nums, target) {
   return l;
 }
 
+/**
+ *
+ * @param {integer} version
+ * @returns boolean
+ */
+function isBadVersion(version) {
+  return true;
+}
+
 export const Day1 = {
   binarySearch,
   binarySearch2,
   searchInsertPosition,
+  isBadVersion,
 };
 
 export const Day2 = {

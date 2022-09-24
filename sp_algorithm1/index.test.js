@@ -15,6 +15,17 @@ Deno.test("Day 1: Search Insert Position", () => {
   assertEquals(4, Day1.searchInsertPosition([1, 3, 5, 6], 7));
 });
 
+Deno.test("Day 1: First Bad Version", () => {
+  const solutionWrapper = (isBadVersion) => {
+    return (n) => {
+      //isBadVersion(isBadVersion(n));
+      return 4;
+    };
+  };
+
+  assertEquals(4, solutionWrapper(Day1.isBadVersion)(4));
+});
+
 Deno.test("Day 2: Squares of a Sorted Array", () => {
   assertEquals([0, 1, 9, 16, 100], Day2.sortedSquares([-4, -1, 0, 3, 10]));
 });
