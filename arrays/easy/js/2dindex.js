@@ -113,3 +113,7 @@ const iMap = (arr) =>
     }
     return m;
   }, new Map());
+
+export function largestLocal(grid) {
+  return [];
+}
