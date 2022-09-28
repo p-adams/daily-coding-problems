@@ -341,3 +341,7 @@ export function countWords(words1, words2) {
     0
   );
 }
+
+export function arithmeticTriplets(nums, diff) {
+  return 0;
+}
