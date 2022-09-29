@@ -136,5 +136,5 @@ Deno.test("count common words with one occurence", () => {
 });
 
 Deno.test("number of arithmetic triplets", () => {
-  assertEquals(0, array.arithmeticTriplets([], 0));
+  assertEquals(2, array.arithmeticTriplets([0, 1, 4, 6, 7, 10], 3));
 });
