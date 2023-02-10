@@ -138,3 +138,8 @@ Deno.test("count common words with one occurence", () => {
 Deno.test("number of arithmetic triplets", () => {
   assertEquals(2, array.arithmeticTriplets([0, 1, 4, 6, 7, 10], 3));
 });
+
+Deno.test("difference between element sum and digit sum of an array", () => {
+  assertEquals(0, array.differenceOfSum([1, 2, 3, 4]));
+  assertEquals(9, array.differenceOfSum([1, 15, 6, 3]));
+});

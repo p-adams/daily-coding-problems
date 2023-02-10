@@ -357,4 +357,14 @@ export function arithmeticTriplets(nums, diff) {
   return result;
 }
 
-console.log(arithmeticTriplets([0, 1, 4, 6, 7, 10], 3) === 2);
+export function differenceOfSum(nums) {
+  const elSum = nums.reduce((sum, num) => sum + num, 0);
+  let digitSum = 0;
+  for (const num of nums) {
+    const nStr = num.toString();
+    for (const ch of nStr) {
+      digitSum += +ch;
+    }
+  }
+  return Math.abs(elSum - digitSum);
+}
